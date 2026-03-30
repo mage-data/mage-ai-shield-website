@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ===== Design Tokens ===== */
+:root {
+  --color-bg-primary: #0B1120;
+  --color-bg-secondary: #131C2E;
+  --color-bg-light: #F7F8FA;
+  --color-accent-primary: #00D4AA;
+  --color-accent-secondary: #8B7BF7;
+  --color-text-primary-dark: #FFFFFF;
+  --color-text-secondary-dark: #94A3B8;
+  --color-text-primary-light: #0F172A;
+  --color-text-secondary-light: #64748B;
+  --color-danger: #FF6B6B;
+  --color-success: #34D399;
+}
+
+/* ===== Font Faces ===== */
+
+/* Space Grotesk — Headings */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — Body */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* JetBrains Mono — Code */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+::selection {
+  background-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+/* Focus styles — visible only on keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Tailwind Theme Extension ===== */
+@theme {
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-bg-primary: #0B1120;
+  --color-bg-secondary: #131C2E;
+  --color-bg-light: #F7F8FA;
+  --color-accent-primary: #00D4AA;
+  --color-accent-secondary: #8B7BF7;
+  --color-text-primary-dark: #FFFFFF;
+  --color-text-secondary-dark: #94A3B8;
+  --color-text-primary-light: #0F172A;
+  --color-text-secondary-light: #64748B;
+  --color-danger: #FF6B6B;
+  --color-success: #34D399;
+}

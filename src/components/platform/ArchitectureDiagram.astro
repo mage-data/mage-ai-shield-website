@@ -1,0 +1,185 @@
+---
+const stages = [
+  { id: 'discover', label: 'Discover', x: 260, tips: ['100+ data sources', 'AI-powered classification', 'PII/PHI/PCI detection'] },
+  { id: 'classify', label: 'Classify', x: 390, tips: ['Sensitivity scoring', 'Custom taxonomy', 'Contextual analysis'] },
+  { id: 'deidentify', label: 'De-identify', x: 520, tips: ['30+ techniques', 'Utility preservation', 'Reversible tokenization'] },
+  { id: 'certify', label: 'Certify', x: 650, tips: ['Provenance certificates', 'Audit trail', 'Compliance documentation'] },
+  { id: 'deliver', label: 'Deliver', x: 780, tips: ['Native connectors', '20+ ML platforms', 'Automated push'] },
+];
+---
+
+<div class="relative" id="arch-diagram-container">
+  <svg
+    viewBox="0 0 1000 260"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-full h-auto"
+    role="img"
+    aria-label="AI Shield architecture diagram showing the five-stage pipeline from data sources to ML platforms"
+  >
+    <!-- Data Sources Box -->
+    <rect x="20" y="60" width="180" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <text x="110" y="90" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">Data Sources</text>
+    <text x="110" y="115" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databases</text>
+    <text x="110" y="132" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Data Lakes</text>
+    <text x="110" y="149" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Cloud Storage</text>
+    <text x="110" y="166" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Streaming</text>
+    <!-- DB icon -->
+    <circle cx="60" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+    <circle cx="85" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+    <circle cx="110" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+
+    <!-- Arrow from sources to pipeline -->
+    <line x1="200" y1="130" x2="250" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+    <!-- Pipeline stages -->
+    {stages.map((stage, i) => (
+      <a href={`#stage-${stage.id}`} class="arch-stage" data-stage={stage.id} data-tips={JSON.stringify(stage.tips)}>
+        <rect
+          x={stage.x}
+          y="100"
+          width="110"
+          height="60"
+          rx="10"
+          fill="var(--color-bg-secondary, #141625)"
+          stroke="rgba(255,255,255,0.15)"
+          stroke-width="1.5"
+          class="stage-rect"
+        />
+        <text x={stage.x + 55} y="122" text-anchor="middle" fill="var(--color-accent-primary, #00e5a0)" font-size="10" font-family="var(--font-mono, monospace)" font-weight="600">
+          {String(i + 1).padStart(2, '0')}
+        </text>
+        <text x={stage.x + 55} y="142" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="var(--font-heading, sans-serif)">
+          {stage.label}
+        </text>
+      </a>
+    ))}
+
+    <!-- Connecting arrows between stages -->
+    {stages.slice(0, -1).map((stage, i) => (
+      <line
+        x1={stage.x + 110}
+        y1="130"
+        x2={stages[i + 1].x}
+        y2="130"
+        stroke="rgba(255,255,255,0.2)"
+        stroke-width="1.5"
+        marker-end="url(#arrowhead)"
+      />
+    ))}
+
+    <!-- Arrow from pipeline to ML platforms -->
+    <line x1="890" y1="130" x2="810" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+
+    <!-- ML Platforms Box -->
+    <rect x="800" y="60" width="180" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <text x="890" y="90" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">ML Platforms</text>
+    <text x="890" y="115" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databricks</text>
+    <text x="890" y="132" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Snowflake</text>
+    <text x="890" y="149" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">SageMaker</text>
+    <text x="890" y="166" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Azure ML</text>
+    <!-- Platform icons -->
+    <rect x="855" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+    <rect x="878" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+    <rect x="901" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+
+    <!-- Arrow from pipeline to ML platforms -->
+    <line x1="890" y1="130" x2="800" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <polygon points="802,126 802,134 794,130" fill="rgba(255,255,255,0.2)" />
+
+    <!-- Arrowhead marker -->
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.3)" />
+      </marker>
+    </defs>
+
+    <!-- Pipeline label -->
+    <text x="520" y="80" text-anchor="middle" fill="var(--color-accent-primary, #00e5a0)" font-size="11" font-family="var(--font-mono, monospace)" letter-spacing="0.1em" opacity="0.8">AI SHIELD PIPELINE</text>
+  </svg>
+
+  <!-- Tooltip -->
+  <div
+    id="arch-tooltip"
+    class="absolute hidden pointer-events-none bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 shadow-xl z-10 max-w-[200px]"
+    role="tooltip"
+  >
+    <p id="arch-tooltip-title" class="font-heading font-semibold text-white text-sm mb-1"></p>
+    <ul id="arch-tooltip-list" class="space-y-0.5"></ul>
+  </div>
+</div>
+
+<style>
+  .arch-stage {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .arch-stage .stage-rect {
+    transition: stroke 0.2s ease, filter 0.2s ease;
+  }
+
+  .arch-stage:hover .stage-rect,
+  .arch-stage:focus .stage-rect {
+    stroke: var(--color-accent-primary, #00e5a0);
+    stroke-width: 2;
+    filter: drop-shadow(0 0 8px rgba(0, 229, 160, 0.3));
+  }
+
+  #arch-diagram-container:has(.arch-stage:hover) .arch-stage:not(:hover) {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .arch-stage:hover {
+    opacity: 1 !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .arch-stage .stage-rect {
+      transition: none;
+    }
+    #arch-diagram-container:has(.arch-stage:hover) .arch-stage:not(:hover) {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  function initArchDiagram() {
+    const container = document.getElementById('arch-diagram-container');
+    if (!container) return;
+
+    const tooltip = document.getElementById('arch-tooltip');
+    const tooltipTitle = document.getElementById('arch-tooltip-title');
+    const tooltipList = document.getElementById('arch-tooltip-list');
+    if (!tooltip || !tooltipTitle || !tooltipList) return;
+
+    const stages = container.querySelectorAll<SVGAElement>('.arch-stage');
+
+    stages.forEach((stage) => {
+      const stageId = stage.dataset.stage || '';
+      const tips: string[] = JSON.parse(stage.dataset.tips || '[]');
+
+      stage.addEventListener('mouseenter', (e) => {
+        tooltipTitle.textContent = stageId.charAt(0).toUpperCase() + stageId.slice(1);
+        tooltipList.innerHTML = tips
+          .map((t) => `<li class="text-text-secondary-dark text-xs flex items-start gap-1.5"><span class="text-accent-primary mt-0.5">&#8226;</span>${t}</li>`)
+          .join('');
+
+        const rect = stage.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        tooltip.style.left = `${rect.left - containerRect.left + rect.width / 2 - 100}px`;
+        tooltip.style.top = `${rect.top - containerRect.top - 10}px`;
+        tooltip.style.transform = 'translateY(-100%)';
+        tooltip.classList.remove('hidden');
+      });
+
+      stage.addEventListener('mouseleave', () => {
+        tooltip.classList.add('hidden');
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initArchDiagram);
+  initArchDiagram();
+</script>

@@ -1,0 +1,149 @@
+---
+const columns = ['Name', 'SSN', 'Email', 'Phone', 'Diagnosis', 'Account #'];
+
+const rawData = [
+  ['John Smith', '123-45-6789', 'john@hospital.com', '(555) 123-4567', 'Type 2 Diabetes', '4532-1234-5678-9012'],
+  ['Maria Garcia', '987-65-4321', 'maria@clinic.org', '(555) 234-5678', 'Hypertension', '5678-2345-6789-0123'],
+  ['Robert Chen', '456-78-9012', 'rchen@medlab.com', '(555) 345-6789', 'Major Depression', '6789-3456-7890-1234'],
+  ['Sarah Johnson', '321-54-7890', 'sjohn@pharma.io', '(555) 456-7890', 'Breast Cancer', '7890-4567-8901-2345'],
+  ['David Williams', '654-32-1098', 'dwill@health.net', '(555) 567-8901', 'Atrial Fibrillation', '8901-5678-9012-3456'],
+];
+
+const maskedData = [
+  ['J*** S****', '***-**-6789', 'j***@h***.com', '(***) ***-4567', '[REDACTED]', '****-****-****-9012'],
+  ['M**** G*****', '***-**-4321', 'm****@c*****.org', '(***) ***-5678', '[REDACTED]', '****-****-****-0123'],
+  ['R***** C***', '***-**-9012', 'r****@m*****.com', '(***) ***-6789', '[REDACTED]', '****-****-****-1234'],
+  ['S**** J******', '***-**-7890', 's****@p*****.io', '(***) ***-7890', '[REDACTED]', '****-****-****-2345'],
+  ['D**** W*******', '***-**-1098', 'd****@h*****.net', '(***) ***-8901', '[REDACTED]', '****-****-****-3456'],
+];
+---
+
+<div class="before-after-viz" data-raw={JSON.stringify(rawData)} data-masked={JSON.stringify(maskedData)}>
+  <!-- Toggle -->
+  <div class="flex items-center justify-between mb-4">
+    <p class="font-heading font-semibold text-white text-sm">Patient Records Database</p>
+    <button
+      class="viz-toggle inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg border border-accent-primary text-accent-primary hover:bg-accent-primary/10 transition-colors cursor-pointer"
+      aria-pressed="false"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+      <span class="toggle-label">Show Protected Data</span>
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto -mx-6 px-6">
+    <table class="w-full min-w-[700px] text-sm" role="table">
+      <thead>
+        <tr class="bg-bg-secondary">
+          {columns.map((col) => (
+            <th class="text-left py-3 px-3 font-mono text-accent-primary text-xs uppercase tracking-wider">{col}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rawData.map((row, rowIdx) => (
+          <tr class={rowIdx % 2 === 0 ? 'bg-white/[0.02]' : ''}>
+            {row.map((cell, colIdx) => (
+              <td
+                class="py-2.5 px-3 font-mono text-xs viz-cell text-danger"
+                data-raw={rawData[rowIdx][colIdx]}
+                data-masked={maskedData[rowIdx][colIdx]}
+              >
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .viz-cell {
+    transition: filter 0.15s ease, color 0.15s ease;
+  }
+
+  .viz-cell.transitioning {
+    filter: blur(4px);
+  }
+
+  .viz-cell.masked {
+    color: var(--color-success);
+  }
+
+  .viz-cell.raw {
+    color: var(--color-danger);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .viz-cell {
+      transition: none !important;
+    }
+    .viz-cell.transitioning {
+      filter: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initBeforeAfter() {
+    document.querySelectorAll<HTMLElement>('.before-after-viz').forEach((container) => {
+      const cells = container.querySelectorAll<HTMLElement>('.viz-cell');
+      const toggleBtn = container.querySelector<HTMLButtonElement>('.viz-toggle');
+      const toggleLabel = container.querySelector('.toggle-label');
+      if (!toggleBtn || !toggleLabel) return;
+
+      let isProtected = false;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function showState(protect: boolean) {
+        isProtected = protect;
+        toggleBtn!.setAttribute('aria-pressed', String(protect));
+        toggleLabel!.textContent = protect ? 'Show Raw Data' : 'Show Protected Data';
+
+        cells.forEach((cell) => {
+          const targetValue = protect ? cell.dataset.masked : cell.dataset.raw;
+
+          if (prefersReducedMotion) {
+            cell.textContent = targetValue || '';
+            cell.classList.toggle('masked', protect);
+            cell.classList.toggle('raw', !protect);
+          } else {
+            cell.classList.add('transitioning');
+            setTimeout(() => {
+              cell.textContent = targetValue || '';
+              cell.classList.toggle('masked', protect);
+              cell.classList.toggle('raw', !protect);
+              cell.classList.remove('transitioning');
+            }, 150);
+          }
+        });
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        showState(!isProtected);
+      });
+
+      // IntersectionObserver: auto-trigger on scroll into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !isProtected) {
+              setTimeout(() => showState(true), 600);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(container);
+    });
+  }
+
+  document.addEventListener('astro:page-load', initBeforeAfter);
+  initBeforeAfter();
+</script>

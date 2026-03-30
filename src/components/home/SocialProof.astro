@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import TestimonialCard from '../TestimonialCard.astro';
+import TrustBar from '../TrustBar.astro';
+---
+
+<SectionHeading
+  tag="TRUSTED BY ENTERPRISES"
+  title="What our customers say"
+/>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+  <TestimonialCard
+    quote="AI Shield reduced our HIPAA compliance preparation time by 80%. What used to take our team weeks now happens automatically as part of the data pipeline."
+    attribution="VP of Data Engineering"
+    company="Large Health System"
+  />
+  <TestimonialCard
+    quote="We finally have visibility into what sensitive data feeds our ML models. The provenance certificates have been invaluable for our audit team."
+    attribution="Chief Data Officer"
+    company="Top 10 US Bank"
+  />
+  <TestimonialCard
+    quote="The integration with our Databricks environment was seamless. Our data scientists didn't have to change their workflows at all."
+    attribution="ML Platform Lead"
+    company="Fortune 500 Insurance"
+  />
+</div>
+
+<div class="mt-12">
+  <TrustBar
+    items={["Gartner Cool Vendor", "HIPAA Compliant", "SOC 2 Type II", "ISO 27001", "FedRAMP Ready"]}
+    heading="RECOGNIZED BY"
+  />
+</div>

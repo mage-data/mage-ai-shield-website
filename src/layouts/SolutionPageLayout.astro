@@ -1,0 +1,49 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTASection from '../components/CTASection.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heroHeading: string;
+  heroSubheading?: string;
+  industry: string;
+  regulations?: string[];
+  ogImage?: string;
+}
+
+const { title, description, heroHeading, heroSubheading, industry, regulations = [], ogImage } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title={heroHeading} subtitle={heroSubheading} align="left" tag={industry} />
+
+      {regulations.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-6">
+          {regulations.map(reg => (
+            <span class="px-3 py-1 text-xs font-mono font-medium bg-accent-primary/10 text-accent-primary rounded-full border border-accent-primary/20">
+              {reg}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-6 pb-16">
+    <slot />
+  </div>
+
+  <!-- Bottom CTA -->
+  <CTASection
+    heading="See what sensitive data lives in your AI training pipeline"
+    subheading="Run a free, no-commitment AI data risk assessment. See what's exposed before your regulators do."
+    primaryCta={{ text: 'Start Free Assessment', href: '/free-assessment' }}
+    secondaryCta={{ text: 'Request Demo', href: '/contact' }}
+  />
+</BaseLayout>

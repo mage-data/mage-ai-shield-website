@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  tag?: string;
+  light?: boolean;
+}
+
+const { title, subtitle, align = 'center', tag, light = false } = Astro.props;
+
+const isCenter = align === 'center';
+const titleColor = light ? 'text-text-primary-light' : 'text-white';
+const subtitleColor = light ? 'text-text-secondary-light' : 'text-text-secondary-dark';
+---
+
+<div class={isCenter ? 'text-center' : ''}>
+  {tag && (
+    <p class="text-accent-primary font-mono text-sm uppercase tracking-wider mb-2">
+      {tag}
+    </p>
+  )}
+  <h2 class:list={['font-heading font-bold text-3xl md:text-4xl lg:text-5xl', titleColor]}>
+    {title}
+  </h2>
+  {subtitle && (
+    <p class:list={[
+      'text-lg md:text-xl mt-4 max-w-3xl',
+      subtitleColor,
+      isCenter && 'mx-auto',
+    ]}>
+      {subtitle}
+    </p>
+  )}
+</div>

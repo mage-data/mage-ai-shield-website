@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import AssessmentForm from '../components/forms/AssessmentForm.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Free AI Data Risk Assessment — AI Shield"
+  description="Discover what sensitive data lives in your AI training pipeline. Free assessment, 48-hour turnaround, no commitment."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent-primary font-mono text-sm uppercase tracking-wider mb-4">Free Assessment</p>
+      <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+        What sensitive data lives in your AI training pipeline?
+      </h1>
+      <p class="text-text-secondary-dark text-xl md:text-2xl mt-6 max-w-2xl mx-auto">
+        Find out in 48 hours. Free. No commitment.
+      </p>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title="What You Get" subtitle="A comprehensive picture of your AI data risk posture, delivered in days, not months." />
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <!-- Item 1 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Comprehensive Discovery Scan</h3>
+            <p class="text-text-secondary-dark leading-relaxed">
+              AI Shield scans across your connected data sources — databases, data warehouses, cloud storage, and data lakes — to discover every instance of sensitive data that could be flowing into your AI training pipelines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Detailed Sensitivity Classification</h3>
+            <p class="text-text-secondary-dark leading-relaxed">
+              Every discovered data element is classified by type — PII, PHI, PCI, and custom categories specific to your industry. You will see exactly what types of sensitive data exist, where they are stored, and how they are currently being used.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Risk Exposure Estimate</h3>
+            <p class="text-text-secondary-dark leading-relaxed">
+              The assessment calculates your risk exposure based on the volume and type of unprotected sensitive data, the regulations that apply to your industry, and the potential financial and reputational impact of a breach or compliance failure.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Actionable Remediation Scorecard</h3>
+            <p class="text-text-secondary-dark leading-relaxed">
+              You receive a prioritized remediation scorecard ranking each risk by severity and regulatory impact, with specific recommendations for how AI Shield can resolve each finding. No generic advice — every recommendation is mapped to your actual data environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title="How It Works" subtitle="Three steps. 48 hours. Zero risk." />
+
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-primary/10 border-2 border-accent-primary/30 mb-6">
+            <span class="font-heading font-bold text-2xl text-accent-primary">1</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">Connect</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            Our team helps you securely connect AI Shield to your data sources. On-premises agent deployment takes under an hour. Your data never leaves your environment.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-primary/10 border-2 border-accent-primary/30 mb-6">
+            <span class="font-heading font-bold text-2xl text-accent-primary">2</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">Scan</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            AI Shield runs a comprehensive discovery scan across your connected sources, classifying every sensitive data element by type, regulation, and risk level. Read-only — nothing is modified.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-primary/10 border-2 border-accent-primary/30 mb-6">
+            <span class="font-heading font-bold text-2xl text-accent-primary">3</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">Report</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            You receive a detailed risk assessment report with sensitivity classifications, exposure estimates, and a prioritized remediation scorecard. Delivered within 48 hours of scan completion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Form -->
+  <section class="py-16 md:py-24 px-6" id="form">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <SectionHeading title="Request Your Free Assessment" align="left" />
+          <p class="mt-4 text-text-secondary-dark text-lg leading-relaxed">
+            Fill out the form and our team will reach out within 48 hours to schedule your assessment. No sales pressure — just a clear picture of your AI data risk posture.
+          </p>
+
+          <!-- Trust Elements -->
+          <div class="mt-10 space-y-4">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p class="text-text-secondary-dark">Your data never leaves your environment. On-premises scanning only.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p class="text-text-secondary-dark">ISO 27001 certified process.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p class="text-text-secondary-dark">Read-only scan. Nothing in your environment is modified.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p class="text-text-secondary-dark">No commitment. No credit card. No sales pressure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+          <AssessmentForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

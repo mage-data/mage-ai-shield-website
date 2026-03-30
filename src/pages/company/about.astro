@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<BaseLayout
+  title="About — AI Shield by Mage Data"
+  description="AI Shield makes enterprise data safe for AI. A Mage Data product trusted by healthcare and financial services organizations."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent-primary font-mono text-sm uppercase tracking-wider mb-4">About</p>
+      <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+        About AI Shield
+      </h1>
+      <p class="text-text-secondary-dark text-xl md:text-2xl mt-6 max-w-2xl mx-auto">
+        A Mage Data product making enterprise data safe for AI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Mission -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title="Our Mission" align="left" />
+
+      <div class="mt-8 space-y-6 text-text-secondary-dark text-lg leading-relaxed max-w-4xl">
+        <p>
+          The enterprise AI revolution is here, but it has a critical blind spot. Organizations are racing to build machine learning models that drive competitive advantage — from clinical diagnostics and fraud detection to personalized recommendations and predictive maintenance. The fuel for these models is data. Real, high-quality, representative data. And the vast majority of that data contains sensitive information that regulations were designed to protect.
+        </p>
+        <p>
+          Mage Data built AI Shield to solve this fundamental tension. Our mission is to make enterprise data safe for AI — enabling organizations to unlock the full value of their data assets for machine learning while maintaining rigorous compliance with every regulation that governs their industry. We believe that data protection and AI innovation are not opposing forces. With the right technology, they are complementary.
+        </p>
+        <p>
+          AI Shield is the missing infrastructure layer between production databases and ML platforms. We automate the discovery, de-identification, certification, and delivery of AI-ready data — so that data science teams get what they need, compliance teams get what they require, and organizations can move faster with confidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Us Different -->
+  <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title="What Makes Us Different" />
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <!-- End-to-End Pipeline -->
+        <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+          <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">End-to-End Pipeline</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            Most solutions address a single step — discovery, masking, or documentation. AI Shield covers the entire journey from source database to AI-ready dataset in a single, integrated platform. Discover sensitive data, apply context-aware de-identification, generate provenance certificates, and deliver to ML platforms — all governed by a unified policy engine.
+          </p>
+        </div>
+
+        <!-- ML Utility Preservation -->
+        <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+          <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">ML Utility Preservation</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            De-identification is only valuable if the resulting data can still train effective models. AI Shield applies utility-aware transformations that preserve the statistical distributions, relational integrity, and feature correlations that machine learning models depend on. Built-in validation compares model performance on de-identified vs. original data to ensure compliance does not come at the cost of accuracy.
+          </p>
+        </div>
+
+        <!-- Provenance Certification -->
+        <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+          <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">Provenance Certification</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            Every transformation generates a cryptographically signed certificate documenting exactly what happened to the data — what was detected, what was transformed, and what policies were applied. These certificates provide the auditable trail that regulators, IRBs, and internal compliance teams demand. No more manual documentation. No more audit scrambles.
+          </p>
+        </div>
+
+        <!-- Enterprise-Grade Security -->
+        <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+          <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white mb-3">Enterprise-Grade Security</h3>
+          <p class="text-text-secondary-dark leading-relaxed">
+            AI Shield deploys on-premises or in your private cloud — your data never leaves your environment. Role-based access controls, encrypted communication channels, tamper-evident audit logs, and least-privilege architecture ensure that the tool designed to protect your data does not become a new attack surface. Built from the ground up for the security expectations of regulated industries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Recognition -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title="Certifications & Recognition" />
+
+      <div class="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-bg-secondary rounded-xl p-6 border border-white/5 text-center">
+          <div class="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4">
+            <span class="font-heading font-bold text-accent-primary text-lg">ISO</span>
+          </div>
+          <h3 class="font-heading font-bold text-white mb-1">ISO 27001</h3>
+          <p class="text-text-secondary-dark text-sm">Information Security Management</p>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-6 border border-white/5 text-center">
+          <div class="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4">
+            <span class="font-heading font-bold text-accent-primary text-lg">SOC</span>
+          </div>
+          <h3 class="font-heading font-bold text-white mb-1">SOC 2 Type II</h3>
+          <p class="text-text-secondary-dark text-sm">Security, Availability & Confidentiality</p>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-6 border border-white/5 text-center">
+          <div class="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-white mb-1">Gartner Recognized</h3>
+          <p class="text-text-secondary-dark text-sm">Data Masking & Privacy</p>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-6 border border-white/5 text-center">
+          <div class="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-white mb-1">Enterprise Proven</h3>
+          <p class="text-text-secondary-dark text-sm">Fortune 500 Deployments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parent Company -->
+  <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center">
+        <SectionHeading title="Built by Mage Data" />
+
+        <div class="mt-8 space-y-6 text-text-secondary-dark text-lg leading-relaxed">
+          <p>
+            AI Shield is built by <a href="https://magedata.ai" target="_blank" rel="noopener noreferrer" class="text-accent-primary hover:text-accent-primary/80 transition-colors underline underline-offset-4">Mage Data</a>, a leader in enterprise data security and privacy. Mage Data's core platform has been trusted by Fortune 500 companies, major health systems, and global financial institutions to protect sensitive data at scale for over a decade.
+          </p>
+          <p>
+            AI Shield extends Mage Data's deep expertise in data masking, discovery, and compliance into the AI and machine learning domain. The same technology that protects test data environments across thousands of enterprise deployments now safeguards the data that powers the next generation of AI models.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <a
+            href="https://magedata.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-accent-primary hover:text-accent-primary/80 transition-colors font-semibold"
+          >
+            Visit magedata.ai
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Ready to make your data safe for AI?"
+    subheading="Start with a free assessment or request a personalized demo."
+    primaryCta={{ text: 'Start Free Assessment', href: '/free-assessment' }}
+    secondaryCta={{ text: 'Contact Us', href: '/contact' }}
+  />
+
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTASection from '../components/CTASection.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heroHeading: string;
+  heroSubheading?: string;
+  ogImage?: string;
+}
+
+const { title, description, heroHeading, heroSubheading, ogImage } = Astro.props;
+
+const platformPages = [
+  { title: 'Platform Overview', href: '/platform' },
+  { title: 'Training Data Protection', href: '/platform/training-data' },
+  { title: 'GenAI Firewall', href: '/platform/genai-firewall' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading title={heroHeading} subtitle={heroSubheading} align="left" tag="Platform" />
+    </div>
+  </section>
+
+  <!-- Content with Sidebar -->
+  <div class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="lg:grid lg:grid-cols-[240px_1fr] lg:gap-12">
+      <!-- Sidebar Navigation -->
+      <aside class="hidden lg:block">
+        <nav class="sticky top-24">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-text-secondary-dark mb-4">Platform</h3>
+          <ul class="space-y-1">
+            {platformPages.map(page => (
+              <li>
+                <a
+                  href={page.href}
+                  class:list={[
+                    'block px-3 py-2 text-sm rounded-lg transition-colors',
+                    currentPath === page.href
+                      ? 'bg-accent-primary/10 text-accent-primary font-medium'
+                      : 'text-text-secondary-dark hover:text-white hover:bg-white/5',
+                  ]}
+                >
+                  {page.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="min-w-0">
+        <slot />
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom CTA -->
+  <CTASection
+    heading="See what sensitive data lives in your AI training pipeline"
+    subheading="Run a free, no-commitment AI data risk assessment. See what's exposed before your regulators do."
+    primaryCta={{ text: 'Start Free Assessment', href: '/free-assessment' }}
+    secondaryCta={{ text: 'Request Demo', href: '/contact' }}
+  />
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import Button from '../Button.astro';
+---
+
+<SectionHeading
+  tag="INDUSTRY SOLUTIONS"
+  title="Built for regulated industries"
+/>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+  <!-- Healthcare Card -->
+  <div class="bg-bg-secondary rounded-2xl p-8 md:p-10 border border-white/5 hover:border-accent-primary/20 transition-all duration-300">
+    <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-6">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+        <path d="M12 6v12"/>
+        <path d="M6 12h12"/>
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+      </svg>
+    </div>
+    <h3 class="font-heading font-bold text-xl text-white mb-3">Healthcare & Life Sciences</h3>
+    <p class="text-text-secondary-dark text-sm leading-relaxed mb-6">
+      De-identify PHI across Epic, Oracle Health, and clinical databases. Meet HIPAA Safe Harbor requirements. Generate IRB-ready provenance documentation.
+    </p>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">HIPAA</span>
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">HITECH</span>
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">FDA 21 CFR</span>
+    </div>
+    <Button variant="outlined" href="/solutions/healthcare">Explore Healthcare</Button>
+  </div>
+
+  <!-- Banking Card -->
+  <div class="bg-bg-secondary rounded-2xl p-8 md:p-10 border border-white/5 hover:border-accent-primary/20 transition-all duration-300">
+    <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-6">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+        <rect x="3" y="10" width="18" height="11" rx="1"/>
+        <polygon points="12 2 3 10 21 10"/>
+        <line x1="7" y1="14" x2="7" y2="17"/>
+        <line x1="12" y1="14" x2="12" y2="17"/>
+        <line x1="17" y1="14" x2="17" y2="17"/>
+      </svg>
+    </div>
+    <h3 class="font-heading font-bold text-xl text-white mb-3">Banking & Financial Services</h3>
+    <p class="text-text-secondary-dark text-sm leading-relaxed mb-6">
+      Protect PII and PCI data across Oracle, SQL Server, Snowflake, and mainframe DB2. Multi-regulation compliance for fraud detection, credit scoring, and AML models.
+    </p>
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">GLBA</span>
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">PCI-DSS</span>
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">SOX</span>
+      <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">DPDP</span>
+    </div>
+    <Button variant="outlined" href="/solutions/banking">Explore Banking</Button>
+  </div>
+</div>

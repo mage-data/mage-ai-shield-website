@@ -1,0 +1,87 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Button from '../components/Button.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  tags: string[];
+  readTime: string;
+  ogImage?: string;
+  jsonLd?: Record<string, any>;
+}
+
+const { title, description, date, author, tags, readTime, ogImage, jsonLd } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const shareUrl = encodeURIComponent(Astro.url.href);
+const shareTitle = encodeURIComponent(title);
+---
+
+<BaseLayout title={`${title} — AI Shield Blog`} description={description} ogImage={ogImage} jsonLd={jsonLd}>
+  <article class="pt-32 pb-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Article Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {tags.map(tag => (
+            <span class="px-3 py-1 text-xs font-mono bg-accent-primary/10 text-accent-primary rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
+          {title}
+        </h1>
+        <div class="flex items-center gap-4 mt-6 text-text-secondary-dark text-sm">
+          <span>{author}</span>
+          <span class="opacity-40">·</span>
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          <span class="opacity-40">·</span>
+          <span>{readTime}</span>
+        </div>
+      </header>
+
+      <!-- Article Content (prose styling) -->
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:font-heading prose-headings:text-white prose-headings:font-bold
+        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-text-secondary-dark prose-p:leading-relaxed
+        prose-a:text-accent-primary prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-white
+        prose-li:text-text-secondary-dark
+        prose-blockquote:border-accent-primary prose-blockquote:text-text-secondary-dark
+        prose-code:text-accent-primary prose-code:bg-bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+        prose-pre:bg-bg-secondary prose-pre:border prose-pre:border-white/10
+      ">
+        <slot />
+      </div>
+
+      <!-- Inline CTA -->
+      <div class="my-12 p-8 bg-bg-secondary rounded-xl border border-accent-primary/20 text-center">
+        <h3 class="font-heading font-bold text-xl text-white mb-2">What sensitive data is in your AI training pipeline?</h3>
+        <p class="text-text-secondary-dark text-sm mb-4">Find out with a free, no-commitment risk assessment.</p>
+        <Button href="/free-assessment" variant="primary" size="md">Get Free Assessment</Button>
+      </div>
+
+      <!-- Share Links -->
+      <div class="flex items-center gap-4 py-8 border-t border-white/10">
+        <span class="text-text-secondary-dark text-sm font-medium">Share:</span>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} target="_blank" rel="noopener noreferrer" class="text-text-secondary-dark hover:text-accent-primary transition-colors text-sm">
+          LinkedIn
+        </a>
+        <a href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`} target="_blank" rel="noopener noreferrer" class="text-text-secondary-dark hover:text-accent-primary transition-colors text-sm">
+          X / Twitter
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

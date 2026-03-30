@@ -1,0 +1,72 @@
+---
+interface Props {
+  number: string;
+  suffix?: string;
+  prefix?: string;
+  label: string;
+  source?: string;
+}
+
+const { number, suffix, prefix, label, source } = Astro.props;
+---
+
+<div class="bg-bg-secondary rounded-xl p-6 border border-white/5">
+  <div
+    class="font-heading font-bold text-4xl md:text-5xl text-accent-primary"
+    data-count-target={number}
+    data-count-prefix={prefix || ''}
+    data-count-suffix={suffix || ''}
+  >
+    {prefix}{number}{suffix}
+  </div>
+  <p class="text-text-secondary-dark text-sm mt-2">{label}</p>
+  {source && (
+    <p class="text-text-secondary-dark/60 text-xs mt-1 italic">{source}</p>
+  )}
+</div>
+
+<script>
+  function animateCountUp(el: HTMLElement) {
+    const target = parseFloat(el.dataset.countTarget || '0');
+    const prefix = el.dataset.countPrefix || '';
+    const suffix = el.dataset.countSuffix || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    const isInteger = Number.isInteger(target);
+
+    function update(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = target * eased;
+      el.textContent = prefix + (isInteger ? Math.round(current).toLocaleString() : current.toFixed(1)) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-count-target]').forEach(el => {
+    if (prefersReducedMotion) {
+      const target = el.dataset.countTarget || '0';
+      const prefix = el.dataset.countPrefix || '';
+      const suffix = el.dataset.countSuffix || '';
+      el.textContent = prefix + parseFloat(target).toLocaleString() + suffix;
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCountUp(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(el);
+  });
+</script>

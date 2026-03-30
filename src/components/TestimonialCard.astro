@@ -1,0 +1,23 @@
+---
+interface Props {
+  quote: string;
+  attribution: string;
+  company?: string;
+  size?: string;
+}
+
+const { quote, attribution, company } = Astro.props;
+---
+
+<div class="bg-bg-secondary rounded-xl p-8 border border-white/5 relative">
+  <span class="text-accent-primary/20 font-heading text-6xl absolute top-4 left-6 leading-none" aria-hidden="true">&ldquo;</span>
+  <blockquote class="text-text-secondary-dark text-base md:text-lg leading-relaxed italic mt-4">
+    {quote}
+  </blockquote>
+  <div class="mt-6">
+    <p class="font-semibold text-white text-sm">{attribution}</p>
+    {company && (
+      <p class="text-text-secondary-dark text-xs">{company}</p>
+    )}
+  </div>
+</div>

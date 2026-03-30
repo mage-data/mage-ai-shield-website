@@ -1,0 +1,71 @@
+---
+type CellValue = 'yes' | 'no' | 'partial';
+
+interface Row {
+  feature: string;
+  values: CellValue[];
+}
+
+const competitors = ['AI Shield', 'Varonis', 'Informatica', 'Tonic.ai', 'Lakera', 'Privacera'];
+
+const rows: Row[] = [
+  { feature: 'Sensitive data discovery', values: ['yes', 'yes', 'yes', 'no', 'no', 'yes'] },
+  { feature: 'AI training data focus', values: ['yes', 'no', 'no', 'partial', 'no', 'no'] },
+  { feature: 'De-identification', values: ['yes', 'no', 'yes', 'yes', 'no', 'no'] },
+  { feature: 'ML utility preservation', values: ['yes', 'no', 'no', 'yes', 'no', 'no'] },
+  { feature: 'Provenance certification', values: ['yes', 'no', 'no', 'no', 'no', 'no'] },
+  { feature: 'GenAI prompt protection', values: ['yes', 'no', 'no', 'no', 'yes', 'no'] },
+  { feature: 'ML platform connectors', values: ['yes', 'no', 'partial', 'partial', 'no', 'yes'] },
+  { feature: 'End-to-end pipeline', values: ['yes', 'no', 'no', 'no', 'no', 'no'] },
+];
+
+function renderCell(value: CellValue) {
+  if (value === 'yes') return { text: '\u2713', classes: 'text-success font-bold' };
+  if (value === 'partial') return { text: 'Partial', classes: 'text-accent-secondary' };
+  return { text: '\u2717', classes: 'text-danger/40' };
+}
+---
+
+<div class="overflow-x-auto -mx-6 px-6">
+  <table class="w-full min-w-[700px] text-sm" role="table">
+    <thead>
+      <tr class="bg-bg-secondary">
+        <th class="text-left py-3 px-4 font-heading font-semibold text-white text-xs uppercase tracking-wider rounded-tl-lg">Feature</th>
+        {competitors.map((name, i) => (
+          <th
+            class:list={[
+              'py-3 px-4 font-heading font-semibold text-xs uppercase tracking-wider text-center',
+              i === 0
+                ? 'text-accent-primary border-t-2 border-accent-primary bg-accent-primary/5'
+                : 'text-white',
+              i === competitors.length - 1 && 'rounded-tr-lg',
+            ]}
+          >
+            {name}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row, rowIdx) => (
+        <tr class={rowIdx % 2 === 0 ? 'bg-white/[0.02]' : ''}>
+          <td class="py-3 px-4 text-text-secondary-dark font-medium">{row.feature}</td>
+          {row.values.map((val, colIdx) => {
+            const cell = renderCell(val);
+            return (
+              <td
+                class:list={[
+                  'py-3 px-4 text-center',
+                  cell.classes,
+                  colIdx === 0 && 'bg-accent-primary/5',
+                ]}
+              >
+                {cell.text}
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

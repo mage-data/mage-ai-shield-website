@@ -1,0 +1,338 @@
+<style>
+  #site-header {
+    transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  }
+  .header-scrolled {
+    background-color: rgba(11, 17, 32, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+</style>
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 w-full z-50 bg-transparent border-b border-transparent"
+>
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <span class="font-heading font-bold text-xl text-white">AI Shield</span>
+      <span class="text-text-secondary-dark text-xs hidden sm:inline">by Mage Data</span>
+    </a>
+
+    <!-- Desktop nav (md+) -->
+    <div class="hidden md:flex items-center gap-1">
+      <!-- Platform -->
+      <div class="relative">
+        <button
+          data-dropdown-trigger="dropdown-platform"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="flex items-center gap-1 px-3 py-2 text-sm text-white/80 hover:text-white transition-colors"
+        >
+          Platform
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          id="dropdown-platform"
+          role="menu"
+          class="hidden absolute top-full left-0 mt-2 w-56 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
+        >
+          <a role="menuitem" href="/platform/training-data" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Training Data Protection</a>
+          <a role="menuitem" href="/platform/genai-firewall" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">GenAI Firewall</a>
+          <a role="menuitem" href="/platform" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Platform Overview</a>
+        </div>
+      </div>
+
+      <!-- Solutions -->
+      <div class="relative">
+        <button
+          data-dropdown-trigger="dropdown-solutions"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="flex items-center gap-1 px-3 py-2 text-sm text-white/80 hover:text-white transition-colors"
+        >
+          Solutions
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          id="dropdown-solutions"
+          role="menu"
+          class="hidden absolute top-full left-0 mt-2 w-48 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
+        >
+          <a role="menuitem" href="/solutions/healthcare" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Healthcare</a>
+          <a role="menuitem" href="/solutions/banking" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Banking</a>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div class="relative">
+        <button
+          data-dropdown-trigger="dropdown-resources"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="flex items-center gap-1 px-3 py-2 text-sm text-white/80 hover:text-white transition-colors"
+        >
+          Resources
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          id="dropdown-resources"
+          role="menu"
+          class="hidden absolute top-full left-0 mt-2 w-40 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
+        >
+          <a role="menuitem" href="/resources/blog" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="relative">
+        <button
+          data-dropdown-trigger="dropdown-company"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="flex items-center gap-1 px-3 py-2 text-sm text-white/80 hover:text-white transition-colors"
+        >
+          Company
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          id="dropdown-company"
+          role="menu"
+          class="hidden absolute top-full left-0 mt-2 w-40 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
+        >
+          <a role="menuitem" href="/company/about" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">About</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop CTAs -->
+    <div class="hidden md:flex items-center gap-3 shrink-0">
+      <a
+        href="/free-assessment"
+        class="px-4 py-2 text-sm border border-accent-primary text-accent-primary rounded-lg hover:bg-accent-primary/10 transition-colors"
+      >
+        Free Assessment
+      </a>
+      <a
+        href="/contact"
+        class="px-4 py-2 text-sm bg-accent-primary text-bg-primary font-semibold rounded-lg hover:bg-accent-primary/90 transition-colors"
+      >
+        Request Demo
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-toggle"
+      class="md:hidden p-2 text-white"
+      aria-label="Open navigation menu"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu panel -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-y-0 right-0 w-full max-w-sm bg-bg-primary z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-y-auto"
+  >
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+      <span class="font-heading font-bold text-lg text-white">AI Shield</span>
+      <button id="mobile-close" class="p-2 text-white" aria-label="Close navigation menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="px-6 py-6 space-y-2">
+      <!-- Platform accordion -->
+      <div class="border-b border-white/5">
+        <button
+          data-accordion="acc-platform"
+          class="flex items-center justify-between w-full py-3 text-sm font-semibold text-white"
+        >
+          Platform
+          <svg class="w-4 h-4 opacity-60 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="acc-platform" class="hidden pb-3 pl-4 space-y-2">
+          <a href="/platform/training-data" class="block text-sm text-white/70 hover:text-white transition-colors">Training Data Protection</a>
+          <a href="/platform/genai-firewall" class="block text-sm text-white/70 hover:text-white transition-colors">GenAI Firewall</a>
+          <a href="/platform" class="block text-sm text-white/70 hover:text-white transition-colors">Platform Overview</a>
+        </div>
+      </div>
+
+      <!-- Solutions accordion -->
+      <div class="border-b border-white/5">
+        <button
+          data-accordion="acc-solutions"
+          class="flex items-center justify-between w-full py-3 text-sm font-semibold text-white"
+        >
+          Solutions
+          <svg class="w-4 h-4 opacity-60 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="acc-solutions" class="hidden pb-3 pl-4 space-y-2">
+          <a href="/solutions/healthcare" class="block text-sm text-white/70 hover:text-white transition-colors">Healthcare</a>
+          <a href="/solutions/banking" class="block text-sm text-white/70 hover:text-white transition-colors">Banking</a>
+        </div>
+      </div>
+
+      <!-- Resources accordion -->
+      <div class="border-b border-white/5">
+        <button
+          data-accordion="acc-resources"
+          class="flex items-center justify-between w-full py-3 text-sm font-semibold text-white"
+        >
+          Resources
+          <svg class="w-4 h-4 opacity-60 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="acc-resources" class="hidden pb-3 pl-4 space-y-2">
+          <a href="/resources/blog" class="block text-sm text-white/70 hover:text-white transition-colors">Blog</a>
+        </div>
+      </div>
+
+      <!-- Company accordion -->
+      <div class="border-b border-white/5">
+        <button
+          data-accordion="acc-company"
+          class="flex items-center justify-between w-full py-3 text-sm font-semibold text-white"
+        >
+          Company
+          <svg class="w-4 h-4 opacity-60 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="acc-company" class="hidden pb-3 pl-4 space-y-2">
+          <a href="/company/about" class="block text-sm text-white/70 hover:text-white transition-colors">About</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile CTAs -->
+    <div class="px-6 pt-4 pb-8 space-y-3">
+      <a
+        href="/free-assessment"
+        class="block w-full text-center px-4 py-3 text-sm border border-accent-primary text-accent-primary rounded-lg hover:bg-accent-primary/10 transition-colors"
+      >
+        Free Assessment
+      </a>
+      <a
+        href="/contact"
+        class="block w-full text-center px-4 py-3 text-sm bg-accent-primary text-bg-primary font-semibold rounded-lg hover:bg-accent-primary/90 transition-colors"
+      >
+        Request Demo
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const scrollThreshold = 50;
+
+  function updateHeader() {
+    if (window.scrollY > scrollThreshold) {
+      header?.classList.add('header-scrolled');
+    } else {
+      header?.classList.remove('header-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Dropdown logic
+  document.querySelectorAll('[data-dropdown-trigger]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetId = trigger.getAttribute('data-dropdown-trigger');
+      const dropdown = document.getElementById(targetId!);
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all dropdowns first
+      document.querySelectorAll('[data-dropdown-trigger]').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        const d = document.getElementById(t.getAttribute('data-dropdown-trigger')!);
+        d?.classList.add('hidden');
+      });
+
+      if (!isOpen && dropdown) {
+        trigger.setAttribute('aria-expanded', 'true');
+        dropdown.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Close on click outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('[data-dropdown-trigger]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const d = document.getElementById(t.getAttribute('data-dropdown-trigger')!);
+      d?.classList.add('hidden');
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('[data-dropdown-trigger]').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        const d = document.getElementById(t.getAttribute('data-dropdown-trigger')!);
+        d?.classList.add('hidden');
+      });
+      // Also close mobile menu
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu?.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileClose = document.getElementById('mobile-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+    document.body.classList.add('overflow-hidden');
+  });
+
+  mobileClose?.addEventListener('click', () => {
+    mobileMenu?.classList.add('translate-x-full');
+    document.body.classList.remove('overflow-hidden');
+  });
+
+  // Mobile accordion logic
+  document.querySelectorAll('[data-accordion]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-accordion');
+      const panel = document.getElementById(targetId!);
+      const chevron = btn.querySelector('svg');
+
+      if (panel?.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        chevron?.classList.add('rotate-180');
+      } else {
+        panel?.classList.add('hidden');
+        chevron?.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import StatCard from '../StatCard.astro';
+---
+
+<SectionHeading
+  tag="MARKET URGENCY"
+  title="The AI compliance cliff is coming"
+/>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+  <StatCard
+    number="84"
+    suffix="%"
+    label="of enterprises use sensitive data in AI training without adequate protection"
+    source="Gartner 2025"
+  />
+  <StatCard
+    number="11"
+    prefix="$"
+    suffix="M"
+    label="average cost of a healthcare data breach involving AI systems"
+    source="IBM/Ponemon 2025"
+  />
+  <StatCard
+    number="2026"
+    label="EU AI Act training data transparency requirements take effect"
+    source="EU AI Act Article 10"
+  />
+  <StatCard
+    number="63"
+    suffix="%"
+    label="of CISOs lack visibility into what data feeds their ML models"
+    source="Forrester 2025"
+  />
+</div>

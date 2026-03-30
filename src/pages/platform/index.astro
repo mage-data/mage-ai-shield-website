@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { productSchema } from '../../utils/jsonLd';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ArchitectureDiagram from '../../components/platform/ArchitectureDiagram.astro';
+import PipelineStage from '../../components/platform/PipelineStage.astro';
+import ComparisonTable from '../../components/platform/ComparisonTable.astro';
+import TechSpecs from '../../components/platform/TechSpecs.astro';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<BaseLayout title="AI Shield Platform — AI Data Compliance Pipeline" description="End-to-end pipeline for discovering, protecting, certifying, and delivering enterprise data safely for AI training and inference." jsonLd={productSchema('AI Shield Platform', 'End-to-end AI data compliance pipeline for discovering, de-identifying, certifying, and delivering AI-ready enterprise data.', '/platform')}>
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading
+        tag="Platform"
+        title="The AI data compliance pipeline"
+        subtitle="From production databases to ML platforms — discover, protect, certify, and deliver enterprise data safely for AI."
+      />
+    </div>
+  </section>
+
+  <!-- Architecture Diagram -->
+  <section class="pb-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <ArchitectureDiagram />
+    </div>
+  </section>
+
+  <!-- Pipeline Stages -->
+  <section class="py-16 px-6 bg-bg-secondary/50">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeading tag="Pipeline Stages" title="Five stages. One pipeline." align="center" />
+      <div class="mt-12">
+        <PipelineStage
+          number="01"
+          title="Data Source Connectivity"
+          description="Connect to 100+ enterprise data sources including Oracle, SQL Server, PostgreSQL, MongoDB, Snowflake, Databricks, S3, and streaming platforms."
+          features={[
+            "Agentless scanning — no software installed on source systems",
+            "Support for structured, semi-structured, and unstructured data",
+            "Real-time and batch processing modes",
+            "Encrypted connections with credential vault integration",
+          ]}
+          isOpen={true}
+        />
+        <PipelineStage
+          number="02"
+          title="AI-Powered Discovery & Classification"
+          description="Automatically identify and classify sensitive data using context-aware ML models trained on enterprise data patterns."
+          features={[
+            "200+ built-in sensitivity patterns (PII, PHI, PCI, custom)",
+            "Contextual classification — understands data meaning, not just format",
+            "Sensitivity scoring with confidence levels",
+            "Custom taxonomy support for industry-specific requirements",
+          ]}
+        />
+        <PipelineStage
+          number="03"
+          title="Intelligent De-identification"
+          description="Apply the right protection technique for each data element while preserving statistical properties required for ML model accuracy."
+          features={[
+            "30+ de-identification techniques (tokenization, masking, generalization, synthetic data)",
+            "ML utility preservation — maintains distributions, correlations, and cardinality",
+            "Policy-driven rules engine — different protection levels per regulation",
+            "Reversible tokenization for authorized re-identification",
+          ]}
+        />
+        <PipelineStage
+          number="04"
+          title="Provenance Certification"
+          description="Generate tamper-proof certificates documenting what was found, what was protected, and how compliance was achieved."
+          features={[
+            "Blockchain-anchored provenance records",
+            "Regulatory mapping — automatic HIPAA, GDPR, PCI-DSS compliance documentation",
+            "IRB-ready audit packages for research use cases",
+            "Chain-of-custody tracking across the data lifecycle",
+          ]}
+        />
+        <PipelineStage
+          number="05"
+          title="ML Platform Delivery"
+          description="Push certified, AI-ready datasets directly to ML platforms through native connectors."
+          features={[
+            "Native connectors for Databricks, Snowflake, SageMaker, Azure ML, Vertex AI",
+            "Support for Parquet, Delta Lake, Iceberg, and Hudi table formats",
+            "Self-service portal for data scientists to request datasets",
+            "Automated refresh — re-scan and re-protect on schedule",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SectionHeading tag="Comparison" title="How AI Shield compares" subtitle="The only end-to-end AI data compliance pipeline." />
+      <div class="mt-12">
+        <ComparisonTable />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Specs -->
+  <section class="py-16 px-6 bg-bg-secondary/50">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeading tag="Technical" title="Enterprise-grade specifications" />
+      <div class="mt-12">
+        <TechSpecs />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="See AI Shield in action"
+    subheading="Request a personalized demo or start with a free AI data risk assessment."
+    primaryCta={{ text: "Start Free Assessment", href: "/free-assessment" }}
+    secondaryCta={{ text: "Request Demo", href: "/contact" }}
+  />
+</BaseLayout>

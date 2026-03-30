@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  link?: string;
+  icon?: string;
+}
+
+const { title, description, link } = Astro.props;
+
+const containerClasses = 'bg-bg-secondary rounded-xl p-6 border border-white/5 hover:border-accent-primary/30 transition-all duration-300';
+---
+
+{link ? (
+  <a href={link} class:list={[containerClasses, 'block group']}>
+    <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-4">
+      <slot name="icon" />
+    </div>
+    <h3 class="font-heading font-semibold text-lg text-white mb-2">{title}</h3>
+    <p class="text-text-secondary-dark text-sm leading-relaxed">{description}</p>
+  </a>
+) : (
+  <div class={containerClasses}>
+    <div class="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-4">
+      <slot name="icon" />
+    </div>
+    <h3 class="font-heading font-semibold text-lg text-white mb-2">{title}</h3>
+    <p class="text-text-secondary-dark text-sm leading-relaxed">{description}</p>
+  </div>
+)}

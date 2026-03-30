@@ -1,0 +1,171 @@
+---
+import SolutionPageLayout from '../../layouts/SolutionPageLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+---
+
+<SolutionPageLayout
+  title="Banking AI Data Protection — AI Shield"
+  description="Protect PII and PCI data for AI model training. Multi-regulation compliance for fraud detection, credit scoring, and AML."
+  heroHeading="Banking & Financial Services"
+  heroSubheading="Protect PII and PCI data across Oracle, Snowflake, and mainframe DB2. Multi-regulation compliance for fraud detection, credit scoring, and AML models."
+  industry="Financial Services"
+  regulations={["GLBA", "PCI-DSS", "SOX", "OCC", "DPDP Act"]}
+>
+
+  <!-- The Challenge -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="The Challenge" align="left" />
+
+    <div class="mt-8 space-y-6 text-text-secondary-dark text-lg leading-relaxed max-w-4xl">
+      <p>
+        Financial institutions are in an AI arms race. Fraud detection models need to train on real transaction patterns to catch increasingly sophisticated attacks. Credit scoring algorithms must reflect actual borrower behavior to avoid bias and maintain accuracy. Anti-money laundering (AML) models require genuine network graphs to identify suspicious activity. But the data that makes these models effective is also among the most regulated in the world.
+      </p>
+      <p>
+        Banks operate under a layered compliance burden that few other industries face. The Gramm-Leach-Bliley Act (GLBA) governs the handling of nonpublic personal information. PCI-DSS mandates strict controls over cardholder data. Sarbanes-Oxley (SOX) requires auditable controls over financial reporting data. OCC guidance sets expectations for model risk management. And the Digital Personal Data Protection (DPDP) Act introduces consent-based frameworks for institutions operating in or serving customers in India. Each regulation carries its own requirements, penalties, and examination cycles.
+      </p>
+      <p>
+        The traditional approach — manually masking data, maintaining separate test environments, relying on synthetic data generators — cannot keep pace. Manual masking is error-prone and does not scale across the thousands of tables in a typical banking data warehouse. Synthetic data loses the distributional properties that fraud and AML models depend on. Separate test environments multiply infrastructure costs and create data drift between production and training data.
+      </p>
+      <p>
+        AI Shield provides a unified de-identification layer that protects sensitive financial data while preserving the statistical properties and relational integrity that machine learning models require.
+      </p>
+    </div>
+  </section>
+
+  <!-- How AI Shield Helps -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="How AI Shield Helps" align="left" />
+
+    <div class="mt-10 space-y-12">
+      <!-- Financial Data De-identification -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Financial Data De-identification</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          AI Shield identifies and de-identifies PII, PCI cardholder data, account numbers, routing numbers, SSNs, and other sensitive financial identifiers across your entire data estate. Transformations are designed to preserve the statistical properties that matter for financial modeling — transaction amount distributions, temporal spending patterns, account relationship graphs, and geographic transaction clustering remain intact while all identifying information is removed. Format-preserving encryption ensures that downstream systems and ETL pipelines continue to function without modification.
+        </p>
+      </div>
+
+      <!-- Multi-Regulation Compliance -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Multi-Regulation Compliance Engine</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          Financial institutions do not have the luxury of complying with just one regulation. AI Shield's policy engine allows you to define composite compliance profiles that satisfy multiple regulatory frameworks simultaneously. A single de-identification run can apply GLBA-compliant transformations to customer PII, PCI-DSS Requirement 3 compliant masking to cardholder data, and SOX-auditable controls with full documentation — all in one pass. Provenance certificates map each transformation to the specific regulatory clause it satisfies, giving examiners exactly the documentation they expect.
+        </p>
+      </div>
+
+      <!-- Mainframe and Legacy Support -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Mainframe and Legacy System Support</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          Many of the most critical data assets in banking still reside on mainframe DB2 systems. AI Shield provides native connectors for DB2 on z/OS, ensuring that decades of transactional history locked in mainframe environments can be safely de-identified and made available for AI training. The same applies to legacy Oracle databases, SQL Server data warehouses, and on-premises data stores that predate your cloud migration. No data needs to leave its current environment — AI Shield operates in place, eliminating the security risk of data movement.
+        </p>
+      </div>
+
+      <!-- Model Accuracy Preservation -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">ML Model Accuracy Preservation</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          The value of de-identification collapses if the resulting data cannot train effective models. AI Shield uses utility-aware transformations specifically designed for financial ML use cases. For fraud detection, transaction sequencing and amount distributions are preserved while account identifiers are replaced. For credit scoring, the relationships between financial attributes — debt-to-income ratios, payment history patterns, credit utilization trends — remain statistically consistent. AI Shield includes built-in utility validation that compares model performance metrics (AUC, precision, recall) on de-identified data against baseline, ensuring that compliance does not come at the cost of model effectiveness.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Systems -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="Supported Financial Systems" align="left" />
+
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {[
+        'Oracle Database',
+        'SQL Server',
+        'Snowflake',
+        'BigQuery',
+        'MongoDB',
+        'Mainframe DB2 (z/OS)',
+        'AWS (S3, RDS, Redshift)',
+        'Azure (Blob, SQL, Synapse)',
+        'GCP (BigQuery, Cloud SQL)',
+        'PostgreSQL',
+        'Databricks',
+        'Teradata',
+      ].map(system => (
+        <span class="px-4 py-3 text-sm font-mono text-center bg-bg-secondary border border-white/10 rounded-lg text-white hover:border-accent-primary/30 transition-colors">
+          {system}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <!-- Regulatory Mapping -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="Regulatory Mapping" align="left" />
+    <p class="mt-4 text-text-secondary-dark text-lg max-w-3xl">
+      AI Shield maps directly to the specific regulatory requirements that banking and financial services institutions face, providing auditable traceability for examiners and compliance teams.
+    </p>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">Regulation</th>
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">Requirement</th>
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">How AI Shield Maps</th>
+          </tr>
+        </thead>
+        <tbody class="text-text-secondary-dark text-sm">
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">GLBA</td>
+            <td class="py-4 px-4">Safeguards Rule — protect nonpublic personal information (NPI) of consumers</td>
+            <td class="py-4 px-4">Automated NPI detection and de-identification with provenance documentation; data never leaves the protected environment</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">PCI-DSS Req 3</td>
+            <td class="py-4 px-4">Protect stored cardholder data — render PAN unreadable, limit data retention</td>
+            <td class="py-4 px-4">Format-preserving tokenization of PANs; automated detection of cardholder data across all connected systems; retention policy enforcement</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">SOX Section 404</td>
+            <td class="py-4 px-4">Internal controls over financial reporting — auditability and documentation</td>
+            <td class="py-4 px-4">Complete audit trail of all data transformations; cryptographically signed provenance certificates; role-based access controls with activity logging</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">OCC Guidelines</td>
+            <td class="py-4 px-4">Model Risk Management (SR 11-7) — validation of data used in model development</td>
+            <td class="py-4 px-4">Utility validation reports comparing model metrics on original vs. de-identified data; data lineage documentation for model governance</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-4 font-mono text-accent-primary">DPDP Act</td>
+            <td class="py-4 px-4">Consent-based data processing, data principal rights, cross-border transfer rules</td>
+            <td class="py-4 px-4">De-identified data falls outside personal data scope; policy engine enforces jurisdiction-specific rules; data residency controls prevent unauthorized transfers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="What Financial Leaders Say" align="left" />
+
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <TestimonialCard
+        quote="Our fraud detection models improved by 15% after switching from synthetic data to AI Shield de-identified real transaction data. The statistical fidelity makes all the difference."
+        attribution="Head of AI & Analytics"
+        company="Top 20 US Bank"
+      />
+      <TestimonialCard
+        quote="AI Shield gave us a single compliance layer across GLBA, PCI-DSS, and SOX. Our examiners were impressed with the provenance documentation."
+        attribution="Chief Compliance Officer"
+        company="Global Financial Services Firm"
+      />
+      <TestimonialCard
+        quote="We unlocked 30 years of mainframe transaction history for AI training in weeks, not the months our team originally estimated."
+        attribution="SVP Data Engineering"
+        company="Regional Banking Group"
+      />
+    </div>
+  </section>
+
+</SolutionPageLayout>

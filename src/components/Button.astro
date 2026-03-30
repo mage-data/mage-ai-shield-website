@@ -1,0 +1,39 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'outlined';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  class?: string;
+  analytics?: string;
+  [key: string]: any;
+}
+
+const { variant = 'primary', size = 'md', href, class: className, analytics, ...rest } = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center font-semibold uppercase tracking-wider transition-all duration-200 rounded-lg';
+
+const variantClasses = {
+  primary: 'bg-accent-primary text-bg-primary hover:bg-accent-primary/90 focus:ring-2 focus:ring-accent-primary/50',
+  secondary: 'bg-accent-secondary text-white hover:bg-accent-secondary/90 focus:ring-2 focus:ring-accent-secondary/50',
+  outlined: 'border border-accent-primary text-accent-primary hover:bg-accent-primary/10 focus:ring-2 focus:ring-accent-primary/50',
+};
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-xs',
+  md: 'px-6 py-3 text-sm',
+  lg: 'px-8 py-4 text-base',
+};
+
+const analyticsClass = analytics ? `plausible-event-name=${analytics}` : '';
+const classes = [baseClasses, variantClasses[variant], sizeClasses[size], analyticsClass, className].filter(Boolean).join(' ');
+---
+
+{href ? (
+  <a href={href} class={classes} {...rest}>
+    <slot />
+  </a>
+) : (
+  <button class={classes} {...rest}>
+    <slot />
+  </button>
+)}

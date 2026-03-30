@@ -1,0 +1,264 @@
+---
+import ProductPageLayout from '../../layouts/ProductPageLayout.astro';
+import BeforeAfterViz from '../../components/product/BeforeAfterViz.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+
+<ProductPageLayout
+  title="AI Training Data Protection — AI Shield"
+  description="Discover and protect sensitive data in AI training pipelines. De-identify PII, PHI, and PCI data while preserving ML model accuracy."
+  heroHeading="AI Training Data Protection"
+  heroSubheading="Discover, classify, and de-identify sensitive data across your entire AI training pipeline — automatically."
+>
+  <!-- The Problem -->
+  <section class="mb-16">
+    <h3 class="font-heading font-bold text-2xl text-white mb-4">Your AI training data is your biggest compliance blind spot</h3>
+    <p class="text-text-secondary-dark mb-6">
+      Every enterprise AI initiative starts with data. But the data flowing into your ML pipelines carries hidden risk — sensitive records, regulated fields, and personal information that violates privacy regulations and exposes your organization to breach liability.
+    </p>
+    <ul class="space-y-3">
+      <li class="flex items-start gap-3 text-text-secondary-dark">
+        <span class="text-danger mt-1 shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+        </span>
+        <span><strong class="text-white">Shadow data pipelines</strong> — Data scientists copy production data into notebooks, feature stores, and training sets without governance oversight.</span>
+      </li>
+      <li class="flex items-start gap-3 text-text-secondary-dark">
+        <span class="text-danger mt-1 shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+        </span>
+        <span><strong class="text-white">PII in training sets</strong> — Names, SSNs, medical records, and financial data end up embedded in model weights where they cannot be removed.</span>
+      </li>
+      <li class="flex items-start gap-3 text-text-secondary-dark">
+        <span class="text-danger mt-1 shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+        </span>
+        <span><strong class="text-white">Regulatory exposure</strong> — HIPAA, GDPR, CCPA, and AI-specific regulations (EU AI Act) require documented proof that training data was handled lawfully.</span>
+      </li>
+      <li class="flex items-start gap-3 text-text-secondary-dark">
+        <span class="text-danger mt-1 shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+        </span>
+        <span><strong class="text-white">Model memorization attacks</strong> — Adversaries can extract training data from models, turning every unprotected record into a potential breach vector.</span>
+      </li>
+      <li class="flex items-start gap-3 text-text-secondary-dark">
+        <span class="text-danger mt-1 shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+        </span>
+        <span><strong class="text-white">No audit trail</strong> — When regulators ask "what data trained this model?", most organizations cannot answer.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Before/After Visualization -->
+  <section class="mb-16">
+    <h3 class="font-heading font-bold text-2xl text-white mb-6">See it in action</h3>
+    <p class="text-text-secondary-dark mb-6">
+      Watch sensitive patient data transform into AI-ready, privacy-safe records in real time. Every field is protected using the optimal technique for its data type.
+    </p>
+    <BeforeAfterViz />
+  </section>
+
+  <!-- Capabilities -->
+  <section class="mb-16">
+    <SectionHeading tag="Capabilities" title="Purpose-built for AI training data" align="left" />
+
+    <div class="mt-10 space-y-12">
+      <!-- Capability 1 -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          </span>
+          <h4 class="font-heading font-semibold text-lg text-white">AI Training Data Discovery</h4>
+        </div>
+        <p class="text-text-secondary-dark mb-4">
+          Automatically scan every data source feeding your ML pipelines. AI Shield connects to databases, data lakes, cloud storage, feature stores, and notebook environments to find sensitive data before it enters training.
+        </p>
+        <ul class="space-y-2 pl-11">
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>200+ pre-built classifiers for PII, PHI, PCI, and custom sensitive data types</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Context-aware ML models that understand data meaning, not just regex patterns</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Scans structured data, free-text fields, JSON blobs, and unstructured documents</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Continuous monitoring with alerts when new sensitive data enters pipelines</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Capability 2 -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+          </span>
+          <h4 class="font-heading font-semibold text-lg text-white">Privacy-Preserving Data Preparation</h4>
+        </div>
+        <p class="text-text-secondary-dark mb-4">
+          Apply the optimal de-identification technique for each data element. Unlike generic masking tools, AI Shield preserves the statistical properties that ML models need for accuracy.
+        </p>
+        <ul class="space-y-2 pl-11">
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>30+ techniques: tokenization, k-anonymity, differential privacy, synthetic data generation</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>ML utility scoring — quantifies impact on model performance before applying protection</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Maintains data distributions, correlations, and cardinality for statistical validity</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Policy engine applies different protection levels per regulation (HIPAA vs. GDPR vs. PCI-DSS)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Capability 3 -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </span>
+          <h4 class="font-heading font-semibold text-lg text-white">Role-Based AI Data Access</h4>
+        </div>
+        <p class="text-text-secondary-dark mb-4">
+          Control who sees what. Different teams get different views of the same dataset based on their role, project, and regulatory context.
+        </p>
+        <ul class="space-y-2 pl-11">
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Data scientists see de-identified data; authorized researchers see full records with audit logging</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Project-level access policies — training data access is scoped to approved use cases</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Time-limited data access with automatic expiration and re-certification</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Integration with enterprise identity providers (LDAP, SAML, OAuth)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Capability 4 -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+          </span>
+          <h4 class="font-heading font-semibold text-lg text-white">AI Data Lineage Tracking</h4>
+        </div>
+        <p class="text-text-secondary-dark mb-4">
+          Know exactly what data trained every model. AI Shield generates tamper-proof provenance certificates that document the complete chain of custody.
+        </p>
+        <ul class="space-y-2 pl-11">
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Blockchain-anchored certificates prove data handling at any point in time</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Automatic HIPAA, GDPR, and EU AI Act compliance documentation</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>IRB-ready audit packages for healthcare and research use cases</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Full lineage visualization from source system to trained model</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Capability 5 -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+          </span>
+          <h4 class="font-heading font-semibold text-lg text-white">Catalog Integration</h4>
+        </div>
+        <p class="text-text-secondary-dark mb-4">
+          AI Shield integrates with your existing data catalogs and ML platforms so protected datasets are discoverable and accessible through the tools your teams already use.
+        </p>
+        <ul class="space-y-2 pl-11">
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Native connectors for Databricks Unity Catalog, Snowflake, AWS Glue, Azure Purview</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Self-service portal for data scientists to request and access AI-ready datasets</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Support for Parquet, Delta Lake, Iceberg, and Hudi table formats</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-text-secondary-dark">
+            <span class="text-accent-primary mt-0.5 shrink-0">&#8226;</span>
+            <span>Automated dataset refresh — re-scan and re-protect on configurable schedules</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="mb-8">
+    <SectionHeading tag="Use Cases" title="Real-world scenarios" align="left" />
+
+    <div class="mt-10 space-y-10">
+      <!-- Use Case 1: Healthcare -->
+      <div class="bg-bg-secondary rounded-xl border border-white/5 p-6 md:p-8">
+        <p class="font-mono text-accent-primary text-xs uppercase tracking-wider mb-2">Healthcare</p>
+        <h4 class="font-heading font-semibold text-xl text-white mb-4">Training a clinical NLP model on 10M patient records</h4>
+        <div class="space-y-4 text-text-secondary-dark text-sm">
+          <p>
+            A large hospital network wants to build an NLP model that predicts patient readmission risk using clinical notes, lab results, and diagnosis histories. The dataset contains 10 million patient records spanning five years — all protected under HIPAA.
+          </p>
+          <p>
+            <strong class="text-white">Without AI Shield:</strong> The data engineering team manually reviews sample records, writes regex-based masking scripts, and hopes they caught every sensitive field. Six months later, an audit reveals SSNs embedded in free-text clinical notes that the scripts missed. The project is halted pending a compliance investigation.
+          </p>
+          <p>
+            <strong class="text-white">With AI Shield:</strong> AI Shield scans all 10M records in under 8 hours, discovering 47 types of sensitive data including SSNs in free-text notes, physician names in structured fields, and rare disease combinations that could re-identify patients. The platform applies differential privacy to diagnosis codes, generates synthetic replacement names, and tokenizes all direct identifiers. A provenance certificate documents every transformation. The ML team receives a dataset that preserves clinical correlations while meeting HIPAA Safe Harbor requirements — with full documentation ready for IRB review.
+          </p>
+        </div>
+      </div>
+
+      <!-- Use Case 2: Banking -->
+      <div class="bg-bg-secondary rounded-xl border border-white/5 p-6 md:p-8">
+        <p class="font-mono text-accent-primary text-xs uppercase tracking-wider mb-2">Financial Services</p>
+        <h4 class="font-heading font-semibold text-xl text-white mb-4">Building a fraud detection model with transaction data</h4>
+        <div class="space-y-4 text-text-secondary-dark text-sm">
+          <p>
+            A global bank is building a real-time fraud detection model using 500M credit card transactions across 12 countries. The data contains PCI-regulated card numbers, account holder PII, and transaction patterns subject to GDPR (EU customers), CCPA (California), and LGPD (Brazil).
+          </p>
+          <p>
+            <strong class="text-white">Without AI Shield:</strong> The compliance team requires a six-month review process. Different teams create different masking approaches for different jurisdictions. The resulting dataset has inconsistent protection levels, and the model performs poorly because aggressive masking destroyed the fraud signal patterns.
+          </p>
+          <p>
+            <strong class="text-white">With AI Shield:</strong> The platform applies jurisdiction-aware policies automatically — GDPR-level protection for EU records, CCPA for California, PCI-DSS for card data globally. Tokenization preserves transaction patterns and merchant relationships critical for fraud detection. The ML team receives a unified, compliant dataset in Databricks Delta Lake format within 48 hours. The fraud model achieves 94% detection accuracy — only 2% lower than training on raw data — with full regulatory documentation for all 12 jurisdictions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ProductPageLayout>

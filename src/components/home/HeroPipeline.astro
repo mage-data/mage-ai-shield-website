@@ -1,0 +1,173 @@
+---
+import Button from '../Button.astro';
+---
+
+<section class="relative min-h-screen flex flex-col items-center justify-center bg-bg-primary px-6 overflow-hidden">
+  <!-- Background glow -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative z-10 text-center max-w-5xl mx-auto pt-24 pb-12">
+    <!-- Eyebrow -->
+    <p class="font-mono text-sm text-accent-primary uppercase tracking-wider mb-6">
+      The AI Data Compliance Pipeline
+    </p>
+
+    <!-- Main heading -->
+    <h1 class="font-heading font-bold text-5xl md:text-7xl text-white leading-tight mb-6">
+      Make your enterprise data<br />
+      <span class="text-accent-primary">safe for AI</span>
+    </h1>
+
+    <!-- Subheading -->
+    <p class="text-text-secondary-dark text-lg md:text-xl max-w-3xl mx-auto mb-10">
+      AI Shield is the missing layer between your production databases and ML platforms. Discover, de-identify, certify, and deliver AI-ready data — without slowing down your data science teams.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button variant="primary" size="lg" href="/free-assessment">Get Free Assessment</Button>
+      <Button variant="outlined" size="lg" href="/platform">See the Platform</Button>
+    </div>
+  </div>
+
+  <!-- Pipeline Visualization -->
+  <div class="relative z-10 w-full max-w-4xl mx-auto mt-8 mb-16 px-4">
+    <div class="pipeline-container overflow-x-auto">
+      <svg viewBox="0 0 900 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full min-w-[600px]" role="img" aria-label="Data pipeline visualization showing five stages: Data Sources, Discover, Transform, Certify, ML Platforms">
+        <!-- Stage 1: Data Sources -->
+        <rect x="10" y="30" width="130" height="60" rx="12" class="pipeline-stage-outer" fill="currentColor" />
+        <text x="75" y="65" text-anchor="middle" class="pipeline-label" fill="currentColor">Data Sources</text>
+
+        <!-- Arrow 1 -->
+        <line x1="145" y1="60" x2="195" y2="60" class="pipeline-line" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+        <polygon points="192,54 204,60 192,66" class="pipeline-arrow" fill="currentColor" />
+
+        <!-- Stage 2: Discover -->
+        <rect x="200" y="30" width="120" height="60" rx="12" class="pipeline-stage-inner" fill="currentColor" />
+        <text x="260" y="65" text-anchor="middle" class="pipeline-label-inner" fill="currentColor">Discover</text>
+
+        <!-- Arrow 2 -->
+        <line x1="325" y1="60" x2="365" y2="60" class="pipeline-line" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+        <polygon points="362,54 374,60 362,66" class="pipeline-arrow" fill="currentColor" />
+
+        <!-- Stage 3: Transform -->
+        <rect x="370" y="30" width="120" height="60" rx="12" class="pipeline-stage-inner" fill="currentColor" />
+        <text x="430" y="65" text-anchor="middle" class="pipeline-label-inner" fill="currentColor">Transform</text>
+
+        <!-- Arrow 3 -->
+        <line x1="495" y1="60" x2="535" y2="60" class="pipeline-line" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+        <polygon points="532,54 544,60 532,66" class="pipeline-arrow" fill="currentColor" />
+
+        <!-- Stage 4: Certify -->
+        <rect x="540" y="30" width="120" height="60" rx="12" class="pipeline-stage-inner" fill="currentColor" />
+        <text x="600" y="65" text-anchor="middle" class="pipeline-label-inner" fill="currentColor">Certify</text>
+
+        <!-- Arrow 4 -->
+        <line x1="665" y1="60" x2="705" y2="60" class="pipeline-line" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+        <polygon points="702,54 714,60 702,66" class="pipeline-arrow" fill="currentColor" />
+
+        <!-- Stage 5: ML Platforms -->
+        <rect x="710" y="30" width="140" height="60" rx="12" class="pipeline-stage-outer" fill="currentColor" />
+        <text x="780" y="65" text-anchor="middle" class="pipeline-label" fill="currentColor">ML Platforms</text>
+
+        <!-- AI Shield bracket label -->
+        <line x1="200" y1="20" x2="660" y2="20" stroke="currentColor" class="pipeline-bracket" stroke-width="1.5" />
+        <line x1="200" y1="20" x2="200" y2="28" stroke="currentColor" class="pipeline-bracket" stroke-width="1.5" />
+        <line x1="660" y1="20" x2="660" y2="28" stroke="currentColor" class="pipeline-bracket" stroke-width="1.5" />
+        <text x="430" y="14" text-anchor="middle" class="pipeline-bracket-label" fill="currentColor">AI Shield</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-secondary-dark">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .pipeline-stage-outer {
+    color: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 1;
+  }
+
+  .pipeline-stage-inner {
+    color: var(--color-accent-primary, #22d3ee);
+    opacity: 0.1;
+    stroke: var(--color-accent-primary, #22d3ee);
+    stroke-opacity: 0.3;
+    stroke-width: 1;
+  }
+
+  .pipeline-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-body, sans-serif);
+    font-size: 13px;
+  }
+
+  .pipeline-label-inner {
+    color: var(--color-accent-primary, #22d3ee);
+    font-family: var(--font-heading, sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .pipeline-line {
+    color: var(--color-accent-primary, #22d3ee);
+    opacity: 0.4;
+  }
+
+  .pipeline-arrow {
+    color: var(--color-accent-primary, #22d3ee);
+    opacity: 0.6;
+  }
+
+  .pipeline-bracket {
+    color: var(--color-accent-primary, #22d3ee);
+    opacity: 0.3;
+  }
+
+  .pipeline-bracket-label {
+    color: var(--color-accent-primary, #22d3ee);
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+  }
+
+  /* Flow animation on lines */
+  .pipeline-line {
+    animation: flow 2s linear infinite;
+  }
+
+  @keyframes flow {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+
+  /* Scroll indicator bounce */
+  .scroll-indicator {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .pipeline-line {
+      animation: none;
+    }
+
+    .scroll-indicator {
+      animation: none;
+    }
+  }
+</style>

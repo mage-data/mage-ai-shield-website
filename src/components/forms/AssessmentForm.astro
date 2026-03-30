@@ -1,0 +1,210 @@
+---
+---
+
+<div id="assessment-form-wrapper">
+  <form
+    id="assessment-form"
+    action="https://formspree.io/f/YOUR_FORM_ID"
+    method="POST"
+    class="space-y-6"
+  >
+    <!-- Full Name -->
+    <div>
+      <label for="full-name" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Full Name <span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        id="full-name"
+        name="full_name"
+        required
+        autocomplete="name"
+        placeholder="Jane Smith"
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full placeholder:text-white/30"
+      />
+    </div>
+
+    <!-- Work Email -->
+    <div>
+      <label for="work-email" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Work Email <span class="text-danger">*</span>
+      </label>
+      <input
+        type="email"
+        id="work-email"
+        name="work_email"
+        required
+        autocomplete="email"
+        placeholder="jane@company.com"
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full placeholder:text-white/30"
+      />
+    </div>
+
+    <!-- Company Name -->
+    <div>
+      <label for="company-name" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Company Name <span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        id="company-name"
+        name="company_name"
+        required
+        autocomplete="organization"
+        placeholder="Acme Health Systems"
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full placeholder:text-white/30"
+      />
+    </div>
+
+    <!-- Role -->
+    <div>
+      <label for="role" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Role <span class="text-danger">*</span>
+      </label>
+      <select
+        id="role"
+        name="role"
+        required
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full appearance-none"
+      >
+        <option value="" disabled selected class="text-white/30">Select your role</option>
+        <option value="CISO">CISO</option>
+        <option value="CDO">CDO</option>
+        <option value="VP Data">VP Data</option>
+        <option value="VP Engineering">VP Engineering</option>
+        <option value="ML Engineer">ML Engineer</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <!-- Number of Databases -->
+    <div>
+      <label for="num-databases" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Number of Databases <span class="text-danger">*</span>
+      </label>
+      <select
+        id="num-databases"
+        name="num_databases"
+        required
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full appearance-none"
+      >
+        <option value="" disabled selected class="text-white/30">Select range</option>
+        <option value="1-10">1-10</option>
+        <option value="11-50">11-50</option>
+        <option value="51-100">51-100</option>
+        <option value="100+">100+</option>
+      </select>
+    </div>
+
+    <!-- Primary Industry -->
+    <div>
+      <label for="industry" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Primary Industry <span class="text-danger">*</span>
+      </label>
+      <select
+        id="industry"
+        name="industry"
+        required
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full appearance-none"
+      >
+        <option value="" disabled selected class="text-white/30">Select industry</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Banking/Finance">Banking/Finance</option>
+        <option value="Insurance">Insurance</option>
+        <option value="Government">Government</option>
+        <option value="Technology">Technology</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <!-- Primary Regulation Concern -->
+    <div>
+      <label for="regulation" class="block text-sm font-medium text-text-secondary-dark mb-1.5">
+        Primary Regulation Concern <span class="text-danger">*</span>
+      </label>
+      <select
+        id="regulation"
+        name="primary_regulation"
+        required
+        class="bg-bg-secondary border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 outline-none w-full appearance-none"
+      >
+        <option value="" disabled selected class="text-white/30">Select regulation</option>
+        <option value="HIPAA">HIPAA</option>
+        <option value="PCI-DSS">PCI-DSS</option>
+        <option value="GDPR">GDPR</option>
+        <option value="DPDP Act">DPDP Act</option>
+        <option value="EU AI Act">EU AI Act</option>
+        <option value="SOX">SOX</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <!-- Hidden UTM Fields -->
+    <input type="hidden" name="utm_source" id="utm_source" />
+    <input type="hidden" name="utm_medium" id="utm_medium" />
+    <input type="hidden" name="utm_campaign" id="utm_campaign" />
+    <input type="hidden" name="utm_content" id="utm_content" />
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="w-full inline-flex items-center justify-center font-semibold uppercase tracking-wider transition-all duration-200 rounded-lg bg-accent-primary text-bg-primary hover:bg-accent-primary/90 focus:ring-2 focus:ring-accent-primary/50 px-8 py-4 text-base"
+    >
+      Request Free Assessment
+    </button>
+  </form>
+
+  <!-- Success Message -->
+  <div id="assessment-success" class="hidden text-center py-12">
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-6">
+      <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <h3 class="font-heading font-bold text-2xl text-white mb-2">Assessment Requested</h3>
+    <p class="text-text-secondary-dark text-lg">
+      Thank you. Our team will reach out within 48 hours to schedule your free AI data risk assessment.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Populate hidden UTM fields from URL parameters
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+    utmFields.forEach(field => {
+      const el = document.getElementById(field) as HTMLInputElement;
+      if (el && params.get(field)) {
+        el.value = params.get(field) || '';
+      }
+    });
+
+    // Handle form submission
+    const form = document.getElementById('assessment-form') as HTMLFormElement;
+    const successDiv = document.getElementById('assessment-success');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' },
+          });
+
+          if (response.ok) {
+            form.classList.add('hidden');
+            successDiv?.classList.remove('hidden');
+          }
+        } catch (error) {
+          // Allow default form submission as fallback
+          form.submit();
+        }
+      });
+    }
+  });
+</script>

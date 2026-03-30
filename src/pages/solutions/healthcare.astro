@@ -1,0 +1,184 @@
+---
+import SolutionPageLayout from '../../layouts/SolutionPageLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+---
+
+<SolutionPageLayout
+  title="Healthcare AI Data Protection — AI Shield"
+  description="De-identify PHI for safe AI training. HIPAA Safe Harbor compliance with automated provenance for IRB and FDA submissions."
+  heroHeading="Healthcare & Life Sciences"
+  heroSubheading="De-identify PHI across Epic, Oracle Health, and clinical databases. Meet HIPAA Safe Harbor requirements. Generate IRB-ready provenance documentation."
+  industry="Healthcare"
+  regulations={["HIPAA", "HITECH", "FDA 21 CFR Part 11", "State Privacy Laws"]}
+>
+
+  <!-- The Challenge -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="The Challenge" align="left" />
+
+    <div class="mt-8 space-y-6 text-text-secondary-dark text-lg leading-relaxed max-w-4xl">
+      <p>
+        Healthcare data breaches are the most expensive across every industry. According to IBM's Cost of a Data Breach Report, the average healthcare breach now costs <span class="text-danger font-semibold">$11 million</span> — nearly three times the cross-industry average. With the rapid adoption of clinical AI for diagnostics, drug discovery, and population health management, the attack surface and compliance burden are growing simultaneously.
+      </p>
+      <p>
+        HIPAA enforcement has entered a new phase. The Office for Civil Rights (OCR) is pursuing record settlements, and state attorneys general are layering additional privacy requirements on top of federal law. Organizations that fail to de-identify Protected Health Information (PHI) before feeding it into AI training pipelines face enforcement actions, reputational damage, and loss of patient trust.
+      </p>
+      <p>
+        Meanwhile, clinical AI teams are under immense pressure to deliver. Predictive models for readmission risk, disease progression, and treatment optimization need high-quality, representative data. Synthetic data alone cannot capture the statistical nuance of real patient populations. The result is a deadlock: data science teams need real data, compliance teams cannot release it, and IT teams lack the tooling to bridge the gap safely.
+      </p>
+      <p>
+        AI Shield breaks this deadlock by providing automated, auditable de-identification that satisfies HIPAA Safe Harbor requirements while preserving the clinical utility AI models demand.
+      </p>
+    </div>
+  </section>
+
+  <!-- How AI Shield Helps -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="How AI Shield Helps" align="left" />
+
+    <div class="mt-10 space-y-12">
+      <!-- HIPAA Safe Harbor Compliance -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">HIPAA Safe Harbor Compliance</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          AI Shield automatically detects and de-identifies all 18 HIPAA Safe Harbor identifiers, including names, dates, geographic data smaller than a state, Social Security numbers, medical record numbers, health plan beneficiary numbers, account numbers, certificate and license numbers, device identifiers, URLs, IP addresses, biometric identifiers, full-face photographs, and any other unique identifying number or code. The system applies context-aware transformations that remove identifying information while preserving clinically meaningful relationships — age ranges, temporal sequences between events, and geographic region-level data remain intact for model training.
+        </p>
+      </div>
+
+      <!-- Clinical Data Pipeline Protection -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Clinical Data Pipeline Protection</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          AI Shield connects directly to the data sources your clinical AI teams depend on. For Epic environments, it integrates with Clarity (the reporting database) and Caboodle (the analytics data warehouse) to de-identify data at the source before it ever reaches a training environment. Oracle Health (formerly Cerner) Millennium databases, along with SQL Server, MongoDB, and cloud data warehouses like Snowflake are fully supported. Data is scanned, classified, and de-identified in place — no data movement, no staging environments, no additional copies of PHI floating through your network.
+        </p>
+      </div>
+
+      <!-- IRB-Ready Provenance -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">IRB-Ready Provenance Documentation</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          Every de-identification operation generates a cryptographically signed provenance certificate documenting exactly what data was processed, which identifiers were detected, what transformations were applied, and the resulting risk score. These certificates are formatted to meet Institutional Review Board (IRB) submission requirements, dramatically reducing the time researchers spend assembling compliance documentation. Privacy officers can review and approve data requests through a centralized audit dashboard, creating a complete chain of custody from source database to AI training dataset.
+        </p>
+      </div>
+
+      <!-- Researcher Self-Service -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Researcher Self-Service Portal</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          Data scientists and clinical researchers request de-identified datasets through a governed self-service portal. They define the cohort, variables, and time range they need. AI Shield applies policy-driven de-identification automatically, routes the request through the appropriate approval workflow, and delivers an AI-ready dataset — complete with provenance documentation — directly to the researcher's workspace. What previously required weeks of back-and-forth between data engineering, compliance, and research teams now takes hours.
+        </p>
+      </div>
+
+      <!-- Ongoing Risk Monitoring -->
+      <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
+        <h3 class="font-heading font-bold text-xl text-white mb-4">Ongoing Re-identification Risk Monitoring</h3>
+        <p class="text-text-secondary-dark leading-relaxed">
+          De-identification is not a one-time event. As new data flows into clinical systems and AI models are retrained, re-identification risk evolves. AI Shield continuously monitors de-identified datasets for quasi-identifier combinations that could increase risk, alerts compliance teams when thresholds are approached, and automatically applies additional suppression or generalization where needed. This ensures that your HIPAA Safe Harbor compliance posture is maintained over time, not just at the point of initial de-identification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Systems -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="Supported Healthcare Systems" align="left" />
+
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {[
+        'Epic Clarity',
+        'Epic Caboodle',
+        'Oracle Health (Cerner)',
+        'SQL Server',
+        'MongoDB',
+        'Snowflake',
+        'AWS (S3, RDS, Redshift)',
+        'Azure (Blob, SQL, Synapse)',
+        'GCP (BigQuery, Cloud SQL)',
+        'PostgreSQL',
+        'Databricks',
+        'FHIR R4 Sources',
+      ].map(system => (
+        <span class="px-4 py-3 text-sm font-mono text-center bg-bg-secondary border border-white/10 rounded-lg text-white hover:border-accent-primary/30 transition-colors">
+          {system}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <!-- Regulatory Mapping -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="Regulatory Mapping" align="left" />
+    <p class="mt-4 text-text-secondary-dark text-lg max-w-3xl">
+      AI Shield maps directly to specific requirements within each healthcare regulation, providing clear traceability between your compliance obligations and AI Shield capabilities.
+    </p>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">Regulation</th>
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">Requirement</th>
+            <th class="py-4 px-4 font-heading font-bold text-white text-sm uppercase tracking-wider">How AI Shield Maps</th>
+          </tr>
+        </thead>
+        <tbody class="text-text-secondary-dark text-sm">
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">HIPAA Privacy Rule</td>
+            <td class="py-4 px-4">De-identification standard (Safe Harbor method, 45 CFR 164.514(b))</td>
+            <td class="py-4 px-4">Automated detection and removal of all 18 identifiers with provenance certificates documenting compliance</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">HIPAA Security Rule</td>
+            <td class="py-4 px-4">Technical safeguards for ePHI (access controls, audit controls, integrity controls)</td>
+            <td class="py-4 px-4">Role-based access, complete audit trail, data integrity verification via cryptographic hashing</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">Breach Notification Rule</td>
+            <td class="py-4 px-4">Notification requirements when unsecured PHI is compromised</td>
+            <td class="py-4 px-4">Properly de-identified data is excluded from breach notification requirements — reducing organizational risk exposure</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">HITECH Act</td>
+            <td class="py-4 px-4">Strengthened enforcement, business associate requirements, increased penalties</td>
+            <td class="py-4 px-4">Automated compliance documentation reduces exposure; provenance certificates satisfy business associate audit requirements</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="py-4 px-4 font-mono text-accent-primary">FDA 21 CFR Part 11</td>
+            <td class="py-4 px-4">Electronic records and signatures in regulated environments</td>
+            <td class="py-4 px-4">Cryptographically signed audit logs, tamper-evident provenance records, timestamped transformation history</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-4 font-mono text-accent-primary">State Privacy Laws</td>
+            <td class="py-4 px-4">Varying state-level requirements (e.g., CCPA, CMIA, Texas HB 300)</td>
+            <td class="py-4 px-4">Configurable policy engine applies state-specific rules automatically based on data residency and patient location</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-12 md:py-16">
+    <SectionHeading title="What Healthcare Leaders Say" align="left" />
+
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <TestimonialCard
+        quote="AI Shield reduced our HIPAA compliance preparation time by 80%. What used to take our team weeks now happens automatically."
+        attribution="VP of Data Engineering"
+        company="Large Health System"
+      />
+      <TestimonialCard
+        quote="The provenance certificates have transformed how we document data handling for our IRB submissions."
+        attribution="Chief Research Officer"
+        company="Academic Medical Center"
+      />
+      <TestimonialCard
+        quote="Our clinical AI team finally has a safe, compliant path to use real-world patient data for model training."
+        attribution="Director of Clinical AI"
+        company="Regional Hospital Network"
+      />
+    </div>
+  </section>
+
+</SolutionPageLayout>

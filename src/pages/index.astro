@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPipeline from '../components/home/HeroPipeline.astro';
+import ProblemStatement from '../components/home/ProblemStatement.astro';
+import Capabilities from '../components/home/Capabilities.astro';
+import MarketUrgency from '../components/home/MarketUrgency.astro';
+import IndustrySolutions from '../components/home/IndustrySolutions.astro';
+import HowItWorks from '../components/home/HowItWorks.astro';
+import SocialProof from '../components/home/SocialProof.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout
+  title="AI Shield — Making Enterprise Data Safe for AI"
+  description="Discover, de-identify, certify, and deliver AI-ready enterprise data. The compliance layer between production databases and ML platforms."
+>
+  <HeroPipeline />
+
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <ProblemStatement />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <Capabilities />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <MarketUrgency />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <IndustrySolutions />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <HowItWorks />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <SocialProof />
+    </div>
+  </section>
+
+  <CTASection
+    heading="What sensitive data lives in your AI training pipeline?"
+    subheading="Find out in 48 hours with a free, no-commitment AI data risk assessment."
+    primaryCta={{ text: "Start Free Assessment", href: "/free-assessment" }}
+    secondaryCta={{ text: "Request Demo", href: "/contact" }}
+  />
+</BaseLayout>

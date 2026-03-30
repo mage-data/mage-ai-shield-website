@@ -1,0 +1,60 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import FeatureCard from '../FeatureCard.astro';
+---
+
+<SectionHeading
+  tag="CAPABILITIES"
+  title="One pipeline. Four stages."
+  subtitle="From raw production data to certified AI-ready datasets."
+/>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
+  <!-- Discover -->
+  <FeatureCard
+    title="Discover"
+    description="AI-powered scanning finds sensitive data across 100+ data sources — databases, data lakes, cloud storage, and streaming platforms. Map PII, PHI, PCI, and custom sensitivity types in hours, not months."
+    link="/platform/training-data"
+  >
+    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  </FeatureCard>
+
+  <!-- Transform -->
+  <FeatureCard
+    title="Transform"
+    description="Apply 30+ de-identification techniques — tokenization, masking, generalization, synthetic data generation — while preserving statistical properties for ML model accuracy."
+    link="/platform/training-data"
+  >
+    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  </FeatureCard>
+
+  <!-- Certify -->
+  <FeatureCard
+    title="Certify"
+    description="Generate tamper-proof provenance certificates for every dataset. Document what was found, what was protected, and prove compliance to regulators, auditors, and IRB committees."
+    link="/platform"
+  >
+    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <path d="M9 15l2 2 4-4"/>
+    </svg>
+  </FeatureCard>
+
+  <!-- Deliver -->
+  <FeatureCard
+    title="Deliver"
+    description="Push certified, AI-ready data directly to Databricks, Snowflake, SageMaker, Azure ML, and 20+ ML platforms through native connectors. No manual handoffs."
+    link="/platform"
+  >
+    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-primary">
+      <line x1="22" y1="2" x2="11" y2="13"/>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+    </svg>
+  </FeatureCard>
+</div>
