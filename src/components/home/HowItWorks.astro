@@ -1,6 +1,7 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
 import Button from '../Button.astro';
+import { url } from '../../utils/links';
 
 const steps = [
   { num: 1, title: 'Request', description: 'Data scientist requests a training dataset through the self-service portal' },
@@ -55,5 +56,5 @@ const steps = [
 </div>
 
 <div class="text-center mt-10">
-  <Button variant="outlined" href="/platform">See Platform Details</Button>
+  <Button variant="outlined" href={url('/platform')}>See Platform Details</Button>
 </div>

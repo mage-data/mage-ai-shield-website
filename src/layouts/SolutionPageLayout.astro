@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
 
 interface Props {
   title: string;
@@ -43,7 +44,7 @@ const { title, description, heroHeading, heroSubheading, industry, regulations =
   <CTASection
     heading="See what sensitive data lives in your AI training pipeline"
     subheading="Run a free, no-commitment AI data risk assessment. See what's exposed before your regulators do."
-    primaryCta={{ text: 'Start Free Assessment', href: '/free-assessment' }}
-    secondaryCta={{ text: 'Request Demo', href: '/contact' }}
+    primaryCta={{ text: 'Start Free Assessment', href: url('/free-assessment') }}
+    secondaryCta={{ text: 'Request Demo', href: url('/contact') }}
   />
 </BaseLayout>

@@ -1,3 +1,7 @@
+---
+import { url } from '../utils/links';
+---
+
 <style>
   #site-header {
     transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
@@ -15,7 +19,7 @@
 >
   <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 shrink-0">
+    <a href={url('/')} class="flex items-center gap-2 shrink-0">
       <span class="font-heading font-bold text-xl text-white">AI Shield</span>
       <span class="text-text-secondary-dark text-xs hidden sm:inline">by Mage Data</span>
     </a>
@@ -40,9 +44,9 @@
           role="menu"
           class="hidden absolute top-full left-0 mt-2 w-56 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
         >
-          <a role="menuitem" href="/platform/training-data" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Training Data Protection</a>
-          <a role="menuitem" href="/platform/genai-firewall" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">GenAI Firewall</a>
-          <a role="menuitem" href="/platform" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Platform Overview</a>
+          <a role="menuitem" href={url('/platform/training-data')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Training Data Protection</a>
+          <a role="menuitem" href={url('/platform/genai-firewall')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">GenAI Firewall</a>
+          <a role="menuitem" href={url('/platform')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Platform Overview</a>
         </div>
       </div>
 
@@ -64,8 +68,8 @@
           role="menu"
           class="hidden absolute top-full left-0 mt-2 w-48 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
         >
-          <a role="menuitem" href="/solutions/healthcare" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Healthcare</a>
-          <a role="menuitem" href="/solutions/banking" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Banking</a>
+          <a role="menuitem" href={url('/solutions/healthcare')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Healthcare</a>
+          <a role="menuitem" href={url('/solutions/banking')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Banking</a>
         </div>
       </div>
 
@@ -87,7 +91,7 @@
           role="menu"
           class="hidden absolute top-full left-0 mt-2 w-40 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
         >
-          <a role="menuitem" href="/resources/blog" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+          <a role="menuitem" href={url('/resources/blog')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
         </div>
       </div>
 
@@ -109,7 +113,7 @@
           role="menu"
           class="hidden absolute top-full left-0 mt-2 w-40 bg-bg-secondary border border-white/10 rounded-lg shadow-xl py-2"
         >
-          <a role="menuitem" href="/company/about" class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a role="menuitem" href={url('/company/about')} class="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors">About</a>
         </div>
       </div>
     </div>
@@ -117,13 +121,13 @@
     <!-- Desktop CTAs -->
     <div class="hidden md:flex items-center gap-3 shrink-0">
       <a
-        href="/free-assessment"
+        href={url('/free-assessment')}
         class="px-4 py-2 text-sm border border-accent-primary text-accent-primary rounded-lg hover:bg-accent-primary/10 transition-colors"
       >
         Free Assessment
       </a>
       <a
-        href="/contact"
+        href={url('/contact')}
         class="px-4 py-2 text-sm bg-accent-primary text-bg-primary font-semibold rounded-lg hover:bg-accent-primary/90 transition-colors"
       >
         Request Demo
@@ -169,9 +173,9 @@
           </svg>
         </button>
         <div id="acc-platform" class="hidden pb-3 pl-4 space-y-2">
-          <a href="/platform/training-data" class="block text-sm text-white/70 hover:text-white transition-colors">Training Data Protection</a>
-          <a href="/platform/genai-firewall" class="block text-sm text-white/70 hover:text-white transition-colors">GenAI Firewall</a>
-          <a href="/platform" class="block text-sm text-white/70 hover:text-white transition-colors">Platform Overview</a>
+          <a href={url('/platform/training-data')} class="block text-sm text-white/70 hover:text-white transition-colors">Training Data Protection</a>
+          <a href={url('/platform/genai-firewall')} class="block text-sm text-white/70 hover:text-white transition-colors">GenAI Firewall</a>
+          <a href={url('/platform')} class="block text-sm text-white/70 hover:text-white transition-colors">Platform Overview</a>
         </div>
       </div>
 
@@ -187,8 +191,8 @@
           </svg>
         </button>
         <div id="acc-solutions" class="hidden pb-3 pl-4 space-y-2">
-          <a href="/solutions/healthcare" class="block text-sm text-white/70 hover:text-white transition-colors">Healthcare</a>
-          <a href="/solutions/banking" class="block text-sm text-white/70 hover:text-white transition-colors">Banking</a>
+          <a href={url('/solutions/healthcare')} class="block text-sm text-white/70 hover:text-white transition-colors">Healthcare</a>
+          <a href={url('/solutions/banking')} class="block text-sm text-white/70 hover:text-white transition-colors">Banking</a>
         </div>
       </div>
 
@@ -204,7 +208,7 @@
           </svg>
         </button>
         <div id="acc-resources" class="hidden pb-3 pl-4 space-y-2">
-          <a href="/resources/blog" class="block text-sm text-white/70 hover:text-white transition-colors">Blog</a>
+          <a href={url('/resources/blog')} class="block text-sm text-white/70 hover:text-white transition-colors">Blog</a>
         </div>
       </div>
 
@@ -220,7 +224,7 @@
           </svg>
         </button>
         <div id="acc-company" class="hidden pb-3 pl-4 space-y-2">
-          <a href="/company/about" class="block text-sm text-white/70 hover:text-white transition-colors">About</a>
+          <a href={url('/company/about')} class="block text-sm text-white/70 hover:text-white transition-colors">About</a>
         </div>
       </div>
     </div>
@@ -228,13 +232,13 @@
     <!-- Mobile CTAs -->
     <div class="px-6 pt-4 pb-8 space-y-3">
       <a
-        href="/free-assessment"
+        href={url('/free-assessment')}
         class="block w-full text-center px-4 py-3 text-sm border border-accent-primary text-accent-primary rounded-lg hover:bg-accent-primary/10 transition-colors"
       >
         Free Assessment
       </a>
       <a
-        href="/contact"
+        href={url('/contact')}
         class="block w-full text-center px-4 py-3 text-sm bg-accent-primary text-bg-primary font-semibold rounded-lg hover:bg-accent-primary/90 transition-colors"
       >
         Request Demo

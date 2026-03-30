@@ -12,7 +12,7 @@ Every enterprise CISO can tell you exactly where their production databases live
 
 This is not a failure of competence. It is a structural blind spot that has emerged from the speed at which enterprises are adopting AI. While security teams were busy fortifying production systems, data scientists and ML engineers were building entirely new data pipelines — often outside the traditional security perimeter — to feed an ever-growing appetite for training data.
 
-The result is a compliance gap that is becoming impossible to ignore. Regulatory frameworks from the [EU AI Act](/platform) to updated [HIPAA security rules](/solutions/healthcare) are now explicitly targeting training data governance. And the penalties for getting it wrong are not hypothetical.
+The result is a compliance gap that is becoming impossible to ignore. Regulatory frameworks from the [EU AI Act](/mage-ai-shield-website/platform) to updated [HIPAA security rules](/mage-ai-shield-website/solutions/healthcare) are now explicitly targeting training data governance. And the penalties for getting it wrong are not hypothetical.
 
 ## The Three Silos Problem
 
@@ -38,7 +38,7 @@ If you already have a mature data loss prevention (DLP) program, you might assum
 
 **Data provenance is not tracked.** Traditional security tools can tell you who accessed a database. They cannot tell you whether data from that database was combined with three other sources, preprocessed, and used to train a model that is now serving predictions in production.
 
-This is precisely why purpose-built [training data protection](/platform/training-data) is becoming a requirement, not an option.
+This is precisely why purpose-built [training data protection](/mage-ai-shield-website/platform/training-data) is becoming a requirement, not an option.
 
 ## Real-World Risks: When Training Data Goes Unprotected
 
@@ -56,9 +56,9 @@ These are not edge cases. They are the predictable outcome of treating training 
 
 Two regulatory developments are making training data governance an urgent priority:
 
-**The EU AI Act** (with key provisions taking effect in 2026) introduces explicit requirements for training data governance under Article 10. High-risk AI systems must demonstrate that training datasets are relevant, representative, free of errors to the extent possible, and complete. Organizations must document data provenance, preprocessing steps, and any assumptions made during data preparation. Non-compliance can result in fines of up to 3% of global annual revenue. Read our [detailed guide to EU AI Act training data requirements](/resources/blog/eu-ai-act-training-data).
+**The EU AI Act** (with key provisions taking effect in 2026) introduces explicit requirements for training data governance under Article 10. High-risk AI systems must demonstrate that training datasets are relevant, representative, free of errors to the extent possible, and complete. Organizations must document data provenance, preprocessing steps, and any assumptions made during data preparation. Non-compliance can result in fines of up to 3% of global annual revenue. Read our [detailed guide to EU AI Act training data requirements](/mage-ai-shield-website/resources/blog/eu-ai-act-training-data).
 
-**HIPAA's evolving interpretation** now explicitly encompasses AI systems that process protected health information (PHI). The 2026 security rule updates require covered entities to maintain an inventory of all technology assets — including AI models — that create, receive, maintain, or transmit ePHI. Training an AI model on PHI constitutes processing, and it must meet the same security standards as any other PHI use. Learn more about [HIPAA implications for clinical AI](/resources/blog/hipaa-ai-security-rule-2026).
+**HIPAA's evolving interpretation** now explicitly encompasses AI systems that process protected health information (PHI). The 2026 security rule updates require covered entities to maintain an inventory of all technology assets — including AI models — that create, receive, maintain, or transmit ePHI. Training an AI model on PHI constitutes processing, and it must meet the same security standards as any other PHI use. Learn more about [HIPAA implications for clinical AI](/mage-ai-shield-website/resources/blog/hipaa-ai-security-rule-2026).
 
 > Organizations that wait for enforcement actions to drive compliance will find themselves in a reactive, costly remediation cycle. The time to build compliant training data pipelines is now.
 
@@ -76,7 +76,7 @@ A compliance-ready AI training data pipeline has several key characteristics:
 
 - **Continuous monitoring** — The pipeline is continuously monitored for policy violations, data drift, and unauthorized data ingestion.
 
-This is the approach we have built into the [AI Shield platform](/platform/training-data) — not as a bolted-on afterthought, but as the core architecture.
+This is the approach we have built into the [AI Shield platform](/mage-ai-shield-website/platform/training-data) — not as a bolted-on afterthought, but as the core architecture.
 
 ## Five Questions Every CISO Should Ask About Their AI Training Data
 
@@ -94,8 +94,8 @@ If you are responsible for information security at an enterprise that is buildin
 
 ## Closing the Blind Spot
 
-The enterprises that get ahead of this challenge will not just avoid regulatory penalties — they will build a competitive advantage. Trustworthy AI, built on governed training data, is becoming a differentiator in every industry from [healthcare](/solutions/healthcare) to financial services.
+The enterprises that get ahead of this challenge will not just avoid regulatory penalties — they will build a competitive advantage. Trustworthy AI, built on governed training data, is becoming a differentiator in every industry from [healthcare](/mage-ai-shield-website/solutions/healthcare) to financial services.
 
-The first step is understanding your current exposure. Our [free risk assessment](/free-assessment) provides a no-commitment analysis of your AI training data pipeline, identifying sensitive data, compliance gaps, and remediation priorities.
+The first step is understanding your current exposure. Our [free risk assessment](/mage-ai-shield-website/free-assessment) provides a no-commitment analysis of your AI training data pipeline, identifying sensitive data, compliance gaps, and remediation priorities.
 
 The blind spot is real. But it does not have to stay that way.

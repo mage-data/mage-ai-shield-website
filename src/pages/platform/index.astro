@@ -7,6 +7,7 @@ import PipelineStage from '../../components/platform/PipelineStage.astro';
 import ComparisonTable from '../../components/platform/ComparisonTable.astro';
 import TechSpecs from '../../components/platform/TechSpecs.astro';
 import CTASection from '../../components/CTASection.astro';
+import { url } from '../../utils/links';
 ---
 
 <BaseLayout title="AI Shield Platform — AI Data Compliance Pipeline" description="End-to-end pipeline for discovering, protecting, certifying, and delivering enterprise data safely for AI training and inference." jsonLd={productSchema('AI Shield Platform', 'End-to-end AI data compliance pipeline for discovering, de-identifying, certifying, and delivering AI-ready enterprise data.', '/platform')}>
@@ -117,7 +118,7 @@ import CTASection from '../../components/CTASection.astro';
   <CTASection
     heading="See AI Shield in action"
     subheading="Request a personalized demo or start with a free AI data risk assessment."
-    primaryCta={{ text: "Start Free Assessment", href: "/free-assessment" }}
-    secondaryCta={{ text: "Request Demo", href: "/contact" }}
+    primaryCta={{ text: "Start Free Assessment", href: url("/free-assessment") }}
+    secondaryCta={{ text: "Request Demo", href: url("/contact") }}
   />
 </BaseLayout>

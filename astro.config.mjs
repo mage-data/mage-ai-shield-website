@@ -7,7 +7,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aishield.magedata.ai',
+  site: 'https://mage-data.github.io',
+  base: '/mage-ai-shield-website',
   output: 'static',
 
   vite: {

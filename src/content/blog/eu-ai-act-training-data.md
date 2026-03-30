@@ -86,7 +86,7 @@ Article 10 effectively mandates end-to-end data provenance for all training data
 
 > The EU AI Act does not just require that your training data be governed. It requires that you can demonstrate it is governed — with documentation that can withstand regulatory scrutiny.
 
-This level of documentation is unfamiliar territory for most ML teams, who have historically optimized for model performance rather than regulatory auditability. Building these capabilities into your [data pipeline](/platform/training-data) from the start is far more efficient than retrofitting them later.
+This level of documentation is unfamiliar territory for most ML teams, who have historically optimized for model performance rather than regulatory auditability. Building these capabilities into your [data pipeline](/mage-ai-shield-website/platform/training-data) from the start is far more efficient than retrofitting them later.
 
 ## Impact on Enterprises Operating in the EU
 
@@ -115,7 +115,7 @@ Meeting Article 10 requirements demands tooling that most organizations do not h
 
 **Audit report generation.** The ability to generate comprehensive, structured documentation of data governance practices, dataset characteristics, and compliance status on demand. When a regulator asks for your Article 10 documentation, you should be able to produce it in hours, not weeks.
 
-The [AI Shield platform](/platform) provides these capabilities as an integrated pipeline, purpose-built for training data governance at enterprise scale.
+The [AI Shield platform](/mage-ai-shield-website/platform) provides these capabilities as an integrated pipeline, purpose-built for training data governance at enterprise scale.
 
 ## Building an Article 10-Compliant Data Pipeline
 
@@ -153,4 +153,4 @@ The EU AI Act's training data requirements represent a fundamental shift in how 
 
 Data teams that embrace this shift will not just achieve compliance. They will build better AI systems — systems with documented provenance, assessed biases, and governed data quality. That is the foundation of trustworthy AI, and it is increasingly what customers, partners, and regulators expect.
 
-Start with an assessment of your current state. Our [free risk assessment](/free-assessment) identifies your training data governance gaps and provides a prioritized remediation plan aligned with Article 10 requirements. The deadline is approaching, and the organizations that prepare now will have a significant advantage over those that scramble later.
+Start with an assessment of your current state. Our [free risk assessment](/mage-ai-shield-website/free-assessment) identifies your training data governance gaps and provides a prioritized remediation plan aligned with Article 10 requirements. The deadline is approaching, and the organizations that prepare now will have a significant advantage over those that scramble later.

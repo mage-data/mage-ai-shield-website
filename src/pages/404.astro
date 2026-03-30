@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import { url } from '../utils/links';
 ---
 
 <BaseLayout title="Page Not Found — AI Shield" description="The page you're looking for doesn't exist.">
@@ -12,8 +13,8 @@ import Button from '../components/Button.astro';
         The page you're looking for doesn't exist or has been moved.
       </p>
       <div class="flex gap-4 justify-center">
-        <Button href="/" variant="primary">Go Home</Button>
-        <Button href="/contact" variant="outlined">Contact Us</Button>
+        <Button href={url('/')} variant="primary">Go Home</Button>
+        <Button href={url('/contact')} variant="outlined">Contact Us</Button>
       </div>
     </div>
   </section>

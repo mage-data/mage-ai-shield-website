@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aishield.magedata.ai/sitemap-index.xml
+Sitemap: https://mage-data.github.io/mage-ai-shield-website/sitemap-index.xml

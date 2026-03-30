@@ -1,4 +1,4 @@
-const SITE_URL = 'https://aishield.magedata.ai';
+const SITE_URL = 'https://mage-data.github.io/mage-ai-shield-website';
 
 export function organizationSchema() {
   return {

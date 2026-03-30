@@ -1,5 +1,6 @@
 ---
 import Button from '../Button.astro';
+import { url } from '../../utils/links';
 ---
 
 <section class="relative min-h-screen flex flex-col items-center justify-center bg-bg-primary px-6 overflow-hidden">
@@ -25,8 +26,8 @@ import Button from '../Button.astro';
 
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button variant="primary" size="lg" href="/free-assessment">Get Free Assessment</Button>
-      <Button variant="outlined" size="lg" href="/platform">See the Platform</Button>
+      <Button variant="primary" size="lg" href={url('/free-assessment')}>Get Free Assessment</Button>
+      <Button variant="outlined" size="lg" href={url('/platform')}>See the Platform</Button>
     </div>
   </div>
 

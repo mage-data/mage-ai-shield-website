@@ -5,9 +5,11 @@ import ProblemStatement from '../components/home/ProblemStatement.astro';
 import Capabilities from '../components/home/Capabilities.astro';
 import MarketUrgency from '../components/home/MarketUrgency.astro';
 import IndustrySolutions from '../components/home/IndustrySolutions.astro';
+import AIJourney from '../components/home/AIJourney.astro';
 import HowItWorks from '../components/home/HowItWorks.astro';
 import SocialProof from '../components/home/SocialProof.astro';
 import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
 ---
 
 <BaseLayout
@@ -29,6 +31,12 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
   <section class="py-16 md:py-24 px-6 bg-bg-secondary/50">
+    <div class="max-w-7xl mx-auto">
+      <AIJourney />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
       <MarketUrgency />
     </div>
@@ -55,7 +63,7 @@ import CTASection from '../components/CTASection.astro';
   <CTASection
     heading="What sensitive data lives in your AI training pipeline?"
     subheading="Find out in 48 hours with a free, no-commitment AI data risk assessment."
-    primaryCta={{ text: "Start Free Assessment", href: "/free-assessment" }}
-    secondaryCta={{ text: "Request Demo", href: "/contact" }}
+    primaryCta={{ text: "Start Free Assessment", href: url("/free-assessment") }}
+    secondaryCta={{ text: "Request Demo", href: url("/contact") }}
   />
 </BaseLayout>

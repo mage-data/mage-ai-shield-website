@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
+import { url } from '../utils/links';
 ---
 
 <BaseLayout
@@ -92,25 +93,25 @@ import ContactForm from '../components/forms/ContactForm.astro';
           <div class="bg-bg-secondary rounded-xl p-8 border border-white/5">
             <h3 class="font-heading font-bold text-lg text-white mb-4">Looking for something specific?</h3>
             <div class="space-y-3">
-              <a href="/free-assessment" class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
+              <a href={url('/free-assessment')} class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
                 <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
                 <span>Free AI Data Risk Assessment</span>
               </a>
-              <a href="/platform" class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
+              <a href={url('/platform')} class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
                 <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
                 <span>Platform Overview</span>
               </a>
-              <a href="/solutions/healthcare" class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
+              <a href={url('/solutions/healthcare')} class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
                 <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
                 <span>Healthcare Solutions</span>
               </a>
-              <a href="/solutions/banking" class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
+              <a href={url('/solutions/banking')} class="flex items-center gap-3 text-text-secondary-dark hover:text-accent-primary transition-colors group">
                 <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>

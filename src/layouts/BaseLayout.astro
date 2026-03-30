@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { organizationSchema } from '../utils/jsonLd';
+import { url } from '../utils/links';
 
 interface Props {
   title: string;
@@ -15,13 +16,13 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/images/og/default.png',
+  ogImage = url('/images/og/default.png'),
   canonicalUrl,
   jsonLd,
 } = Astro.props;
 
 const orgSchema = organizationSchema();
-const siteUrl = 'https://aishield.magedata.ai';
+const siteUrl = 'https://mage-data.github.io/mage-ai-shield-website';
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).href;
 ---
@@ -39,11 +40,11 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteU
     <link rel="canonical" href={canonical} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
 
     <!-- Font Preloads -->
-    <link rel="preload" href="/fonts/space-grotesk-bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={url('/fonts/space-grotesk-bold.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={url('/fonts/inter-regular.woff2')} as="font" type="font/woff2" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

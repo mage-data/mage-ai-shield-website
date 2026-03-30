@@ -1,6 +1,7 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
 import Button from '../Button.astro';
+import { url } from '../../utils/links';
 ---
 
 <SectionHeading
@@ -27,7 +28,7 @@ import Button from '../Button.astro';
       <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">HITECH</span>
       <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">FDA 21 CFR</span>
     </div>
-    <Button variant="outlined" href="/solutions/healthcare">Explore Healthcare</Button>
+    <Button variant="outlined" href={url('/solutions/healthcare')}>Explore Healthcare</Button>
   </div>
 
   <!-- Banking Card -->
@@ -51,6 +52,6 @@ import Button from '../Button.astro';
       <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">SOX</span>
       <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent-primary/10 text-accent-primary border border-accent-primary/20">DPDP</span>
     </div>
-    <Button variant="outlined" href="/solutions/banking">Explore Banking</Button>
+    <Button variant="outlined" href={url('/solutions/banking')}>Explore Banking</Button>
   </div>
 </div>

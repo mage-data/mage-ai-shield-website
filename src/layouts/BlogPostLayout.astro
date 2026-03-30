@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Button from '../components/Button.astro';
+import { url } from '../utils/links';
 
 interface Props {
   title: string;
@@ -69,7 +70,7 @@ const shareTitle = encodeURIComponent(title);
       <div class="my-12 p-8 bg-bg-secondary rounded-xl border border-accent-primary/20 text-center">
         <h3 class="font-heading font-bold text-xl text-white mb-2">What sensitive data is in your AI training pipeline?</h3>
         <p class="text-text-secondary-dark text-sm mb-4">Find out with a free, no-commitment risk assessment.</p>
-        <Button href="/free-assessment" variant="primary" size="md">Get Free Assessment</Button>
+        <Button href={url('/free-assessment')} variant="primary" size="md">Get Free Assessment</Button>
       </div>
 
       <!-- Share Links -->

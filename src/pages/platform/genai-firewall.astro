@@ -1,6 +1,7 @@
 ---
 import ProductPageLayout from '../../layouts/ProductPageLayout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
+import { url } from '../../utils/links';
 ---
 
 <ProductPageLayout
@@ -196,7 +197,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
             <p class="text-text-secondary-dark text-sm">
               Before data enters your ML pipelines, AI Shield discovers, classifies, and de-identifies sensitive records. Models are trained on compliant data from day one.
             </p>
-            <a href="/platform/training-data" class="inline-flex items-center gap-1 text-accent-primary text-sm font-semibold mt-3 hover:underline">
+            <a href={url('/platform/training-data')} class="inline-flex items-center gap-1 text-accent-primary text-sm font-semibold mt-3 hover:underline">
               Learn more
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
             </a>
@@ -217,7 +218,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
             <p class="text-text-secondary-dark text-sm">
               Every action across the pipeline is documented with tamper-proof certificates. When regulators ask questions, you have answers.
             </p>
-            <a href="/platform" class="inline-flex items-center gap-1 text-accent-primary text-sm font-semibold mt-3 hover:underline">
+            <a href={url('/platform')} class="inline-flex items-center gap-1 text-accent-primary text-sm font-semibold mt-3 hover:underline">
               See full pipeline
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
             </a>

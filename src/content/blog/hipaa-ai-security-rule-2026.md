@@ -36,7 +36,7 @@ Healthcare organizations face a unique challenge when it comes to AI training da
 
 **Claims and billing data** used to train predictive models for utilization management, cost forecasting, or population health contains detailed information about patient diagnoses, treatments, and insurance — all PHI.
 
-The volume of this data makes manual review impractical. A single health system may generate millions of clinical notes per year. Training a clinical NLP model might require hundreds of thousands of these notes. Ensuring that every note is properly de-identified before training is a challenge that requires [automated, purpose-built tooling](/platform/training-data).
+The volume of this data makes manual review impractical. A single health system may generate millions of clinical notes per year. Training a clinical NLP model might require hundreds of thousands of these notes. Ensuring that every note is properly de-identified before training is a challenge that requires [automated, purpose-built tooling](/mage-ai-shield-website/platform/training-data).
 
 ## Safe Harbor vs. Expert Determination: Implications for AI
 
@@ -58,7 +58,7 @@ Before any data enters the training pipeline, it must be scanned and classified.
 
 ### Automated De-identification with Validation
 
-De-identification must be automated to handle the volume of clinical data used in AI training. But automation alone is not enough — there must be a validation layer that measures de-identification completeness and flags records where residual PHI risk exceeds acceptable thresholds. This is where [AI Shield's healthcare solution](/solutions/healthcare) provides a critical safeguard.
+De-identification must be automated to handle the volume of clinical data used in AI training. But automation alone is not enough — there must be a validation layer that measures de-identification completeness and flags records where residual PHI risk exceeds acceptable thresholds. This is where [AI Shield's healthcare solution](/mage-ai-shield-website/solutions/healthcare) provides a critical safeguard.
 
 ### Access Controls and Segmentation
 
@@ -102,10 +102,10 @@ If your organization is developing or deploying clinical AI, here are the steps 
 
 6. **Plan for ongoing monitoring.** The 2026 rule is not a one-time compliance exercise. Build continuous monitoring into your AI data pipeline to detect new PHI exposures, access anomalies, and policy violations.
 
-7. **Consider a formal assessment.** A [free risk assessment](/free-assessment) can identify gaps in your current AI training data pipeline and prioritize remediation before the updated rule takes full effect.
+7. **Consider a formal assessment.** A [free risk assessment](/mage-ai-shield-website/free-assessment) can identify gaps in your current AI training data pipeline and prioritize remediation before the updated rule takes full effect.
 
 ## Looking Ahead
 
 The 2026 HIPAA Security Rule updates are a signal that regulators are catching up to the reality of AI in healthcare. Organizations that have been treating AI training data as a grey area no longer have that luxury. The requirements are becoming explicit, the documentation expectations are becoming concrete, and the enforcement mechanisms are becoming sharper.
 
-The good news is that compliance and good AI practice are not at odds. Healthcare organizations that build robust, governed [training data pipelines](/platform/training-data) will not only satisfy regulators — they will build more reliable, trustworthy clinical AI systems. That is a competitive advantage that compounds over time.
+The good news is that compliance and good AI practice are not at odds. Healthcare organizations that build robust, governed [training data pipelines](/mage-ai-shield-website/platform/training-data) will not only satisfy regulators — they will build more reliable, trustworthy clinical AI systems. That is a competitive advantage that compounds over time.
