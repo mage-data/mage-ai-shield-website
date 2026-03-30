@@ -1,43 +1,46 @@
 ---
 const stages = [
-  { id: 'discover', label: 'Discover', x: 260, tips: ['100+ data sources', 'AI-powered classification', 'PII/PHI/PCI detection'] },
-  { id: 'classify', label: 'Classify', x: 390, tips: ['Sensitivity scoring', 'Custom taxonomy', 'Contextual analysis'] },
-  { id: 'deidentify', label: 'De-identify', x: 520, tips: ['30+ techniques', 'Utility preservation', 'Reversible tokenization'] },
-  { id: 'certify', label: 'Certify', x: 650, tips: ['Provenance certificates', 'Audit trail', 'Compliance documentation'] },
-  { id: 'deliver', label: 'Deliver', x: 780, tips: ['Native connectors', '20+ ML platforms', 'Automated push'] },
+  { id: 'discover', label: 'Discover', x: 230, tips: ['100+ data sources', 'AI-powered classification', 'PII/PHI/PCI detection'] },
+  { id: 'classify', label: 'Classify', x: 350, tips: ['Sensitivity scoring', 'Custom taxonomy', 'Contextual analysis'] },
+  { id: 'deidentify', label: 'De-identify', x: 470, tips: ['30+ techniques', 'Utility preservation', 'Reversible tokenization'] },
+  { id: 'certify', label: 'Certify', x: 590, tips: ['Provenance certificates', 'Audit trail', 'Compliance documentation'] },
+  { id: 'deliver', label: 'Deliver', x: 710, tips: ['Native connectors', '20+ ML platforms', 'Automated push'] },
 ];
 ---
 
 <div class="relative" id="arch-diagram-container">
   <svg
-    viewBox="0 0 1000 260"
+    viewBox="0 0 1100 280"
     xmlns="http://www.w3.org/2000/svg"
     class="w-full h-auto"
     role="img"
     aria-label="AI Shield architecture diagram showing the five-stage pipeline from data sources to ML platforms"
   >
     <!-- Data Sources Box -->
-    <rect x="20" y="60" width="180" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
-    <text x="110" y="90" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">Data Sources</text>
-    <text x="110" y="115" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databases</text>
-    <text x="110" y="132" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Data Lakes</text>
-    <text x="110" y="149" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Cloud Storage</text>
-    <text x="110" y="166" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Streaming</text>
-    <!-- DB icon -->
-    <circle cx="60" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
-    <circle cx="85" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
-    <circle cx="110" cy="182" r="8" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
+    <rect x="20" y="70" width="170" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <text x="105" y="100" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">Data Sources</text>
+    <text x="105" y="125" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databases</text>
+    <text x="105" y="142" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Data Lakes</text>
+    <text x="105" y="159" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Cloud Storage</text>
+    <text x="105" y="176" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Streaming</text>
+    <!-- DB icons -->
+    <circle cx="65" cy="194" r="8" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
+    <circle cx="90" cy="194" r="8" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
+    <circle cx="115" cy="194" r="8" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
 
     <!-- Arrow from sources to pipeline -->
-    <line x1="200" y1="130" x2="250" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" marker-end="url(#arrowhead)" />
+    <line x1="190" y1="140" x2="225" y2="140" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+    <!-- Pipeline label -->
+    <text x="490" y="88" text-anchor="middle" fill="var(--color-accent-primary, #00D4AA)" font-size="11" font-family="var(--font-mono, monospace)" letter-spacing="0.1em" opacity="0.8">AI SHIELD PIPELINE</text>
 
     <!-- Pipeline stages -->
     {stages.map((stage, i) => (
       <a href={`#stage-${stage.id}`} class="arch-stage" data-stage={stage.id} data-tips={JSON.stringify(stage.tips)}>
         <rect
           x={stage.x}
-          y="100"
-          width="110"
+          y="110"
+          width="100"
           height="60"
           rx="10"
           fill="var(--color-bg-secondary, #141625)"
@@ -45,10 +48,10 @@ const stages = [
           stroke-width="1.5"
           class="stage-rect"
         />
-        <text x={stage.x + 55} y="122" text-anchor="middle" fill="var(--color-accent-primary, #00e5a0)" font-size="10" font-family="var(--font-mono, monospace)" font-weight="600">
+        <text x={stage.x + 50} y="132" text-anchor="middle" fill="var(--color-accent-primary, #00D4AA)" font-size="10" font-family="var(--font-mono, monospace)" font-weight="600">
           {String(i + 1).padStart(2, '0')}
         </text>
-        <text x={stage.x + 55} y="142" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="var(--font-heading, sans-serif)">
+        <text x={stage.x + 50} y="152" text-anchor="middle" fill="white" font-size="11" font-weight="600" font-family="var(--font-heading, sans-serif)">
           {stage.label}
         </text>
       </a>
@@ -57,34 +60,30 @@ const stages = [
     <!-- Connecting arrows between stages -->
     {stages.slice(0, -1).map((stage, i) => (
       <line
-        x1={stage.x + 110}
-        y1="130"
+        x1={stage.x + 100}
+        y1="140"
         x2={stages[i + 1].x}
-        y2="130"
-        stroke="rgba(255,255,255,0.2)"
+        y2="140"
+        stroke="rgba(255,255,255,0.25)"
         stroke-width="1.5"
         marker-end="url(#arrowhead)"
       />
     ))}
 
     <!-- Arrow from pipeline to ML platforms -->
-    <line x1="890" y1="130" x2="810" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <line x1="810" y1="140" x2="845" y2="140" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" marker-end="url(#arrowhead)" />
 
     <!-- ML Platforms Box -->
-    <rect x="800" y="60" width="180" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
-    <text x="890" y="90" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">ML Platforms</text>
-    <text x="890" y="115" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databricks</text>
-    <text x="890" y="132" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Snowflake</text>
-    <text x="890" y="149" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">SageMaker</text>
-    <text x="890" y="166" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Azure ML</text>
+    <rect x="850" y="70" width="170" height="140" rx="12" fill="var(--color-bg-secondary, #141625)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    <text x="935" y="100" text-anchor="middle" fill="white" font-size="13" font-weight="600" font-family="var(--font-heading, sans-serif)">ML Platforms</text>
+    <text x="935" y="125" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Databricks</text>
+    <text x="935" y="142" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Snowflake</text>
+    <text x="935" y="159" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">SageMaker</text>
+    <text x="935" y="176" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10" font-family="var(--font-body, sans-serif)">Azure ML</text>
     <!-- Platform icons -->
-    <rect x="855" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
-    <rect x="878" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
-    <rect x="901" y="174" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00e5a0)" stroke-width="1" opacity="0.6" />
-
-    <!-- Arrow from pipeline to ML platforms -->
-    <line x1="890" y1="130" x2="800" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
-    <polygon points="802,126 802,134 794,130" fill="rgba(255,255,255,0.2)" />
+    <rect x="900" y="186" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
+    <rect x="923" y="186" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
+    <rect x="946" y="186" width="14" height="14" rx="2" fill="none" stroke="var(--color-accent-primary, #00D4AA)" stroke-width="1" opacity="0.6" />
 
     <!-- Arrowhead marker -->
     <defs>
@@ -92,9 +91,6 @@ const stages = [
         <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.3)" />
       </marker>
     </defs>
-
-    <!-- Pipeline label -->
-    <text x="520" y="80" text-anchor="middle" fill="var(--color-accent-primary, #00e5a0)" font-size="11" font-family="var(--font-mono, monospace)" letter-spacing="0.1em" opacity="0.8">AI SHIELD PIPELINE</text>
   </svg>
 
   <!-- Tooltip -->
@@ -120,9 +116,9 @@ const stages = [
 
   .arch-stage:hover .stage-rect,
   .arch-stage:focus .stage-rect {
-    stroke: var(--color-accent-primary, #00e5a0);
+    stroke: var(--color-accent-primary, #00D4AA);
     stroke-width: 2;
-    filter: drop-shadow(0 0 8px rgba(0, 229, 160, 0.3));
+    filter: drop-shadow(0 0 8px rgba(0, 212, 170, 0.3));
   }
 
   #arch-diagram-container:has(.arch-stage:hover) .arch-stage:not(:hover) {
@@ -160,7 +156,7 @@ const stages = [
       const stageId = stage.dataset.stage || '';
       const tips: string[] = JSON.parse(stage.dataset.tips || '[]');
 
-      stage.addEventListener('mouseenter', (e) => {
+      stage.addEventListener('mouseenter', () => {
         tooltipTitle.textContent = stageId.charAt(0).toUpperCase() + stageId.slice(1);
         tooltipList.innerHTML = tips
           .map((t) => `<li class="text-text-secondary-dark text-xs flex items-start gap-1.5"><span class="text-accent-primary mt-0.5">&#8226;</span>${t}</li>`)
